@@ -22,6 +22,8 @@ div {
 
 input {
     border-radius: 15px;
+    height: 25px;
+    width: 150px;
 }
 
 input[type=file] {
@@ -40,6 +42,12 @@ input[type=range] {
 button {
     background-color: rgb(190, 121, 255);
 
+    width: 150px;
+    height: 75px;
+
+    margin-left: auto;
+    margin-right: auto;
+
     border-radius: 20px;
     border: 0% solid black;
 }
@@ -48,16 +56,8 @@ h1 {
     text-transform: capitalize;
 }
 
-#send {
-    width: 30%;
-    height: 125px;
-    margin-left: auto;
-    margin-right: auto;
-}
+/*#send {
+}*/
 
-#restart {
-    width: 30%;
-    height: 125px;
-    margin-left: auto;
-    margin-right: auto;
-}
+/*#restart {
+}*/

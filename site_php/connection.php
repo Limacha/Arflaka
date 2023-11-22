@@ -30,9 +30,11 @@ require_once "function.php";
                 <input type="password" id="password" name="password" require>
             </div>
         </fieldset>
-        <button id="send" name="send">Envoyer</button>
+        <div>
+            <button id="restart" name="restart">Reinitialiser</button>
+            <button id="send" name="send">Envoyer</button>
+        </div>
     </form>
-    <button id="connect" name="connect" onclick="<?php ?>">connect</button>
 
 </body>
 
