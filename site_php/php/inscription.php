@@ -8,10 +8,10 @@ require_once "function.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example : Ponchaut Nicolas</title>
-    <link rel="icon" href="./image/iconSiteWeb.png">
-    <link rel="stylesheet" href="./css/flex.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Arflaka: Inscription</title>
+    <link rel="icon" href="../image/Arflaka.png">
+    <link rel="stylesheet" href="../css/flex.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="flex column centerV">
@@ -34,6 +34,10 @@ require_once "function.php";
                 <div>
                     <label for="date">votre date de naissance</label>
                     <input type="date" id="date" name="date" require>
+                </div>
+                <div>
+                    <label for="email">votre email:</label>
+                    <input type="email" id="email" name="email" require>
                 </div>
                 <div>
                     <label for="phone">votre numero de telephone</label>
