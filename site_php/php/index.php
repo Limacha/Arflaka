@@ -8,25 +8,54 @@ require_once "function.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arflaka</title>
-    <link rel="icon" href="../image/Arflaka.png">
-    <link rel="stylesheet" href="../css/flex.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="icon" href="./image/Arflaka.png">
+    <link rel="stylesheet" href="./css/flex.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body class="flex column centerV">
     <header class="flex centerV">
         <div id="logo" class="flex centerV">
-            <img id="imglogo" src="../image/Arflaka.png" alt="name">
+            <img id="imglogo" src="./image/Arflaka.png" alt="name">
             <p> Arflaka</p>
         </div>
         <div id="menu" class="flex centerV">
-            <button>acceuil</button>
-            <button>discord</button>
-            <button>creation</button>
-            <button>jeux</button>
-            <button>forum</button>
-            <button>objectif</button>
-            <button>aide</button>
+            <button>
+                <a href="#">acceuil</a>
+            </button>
+            <button class="menuDeroulant">
+                <p>discord </p>
+                <ul class="sousMenuDeroulant">
+                    <li>
+                        <a href="#">lien</a>
+                    </li>
+                    <li>
+                        <a href="#">info</a>
+                    </li>
+                    <li>
+                        <a href="#">jeux relier</a>
+                    </li>
+                </ul>
+            </button>
+            <button class="menuDeroulant">
+                <p>creation </p>
+                <ul class="sousMenuDeroulant">
+                </ul>
+            </button>
+            <button class="menuDeroulant">
+                <p>jeux </p>
+                <ul class="sousMenuDeroulant">
+                </ul>
+            </button>
+            <button>
+                <a href="#">forum</a>
+            </button>
+            <button>
+                <a href="#">objectif</a>
+            </button>
+            <button>
+                <a href="#">aide</a>
+            </button>
         </div>
         <div id="info">
             <p>role: inconnu</p>
