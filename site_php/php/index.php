@@ -10,7 +10,7 @@ require_once "function.php";
     <title>Arflaka</title>
     <link rel="icon" href="../image/Arflaka.png">
     <link rel="stylesheet" href="../css/flex.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="flex column centerV">

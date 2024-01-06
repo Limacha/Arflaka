@@ -3,39 +3,38 @@
     padding: 0%;
 }
 
-@keyframes rotationFleche {
-    0% {
-        transform: rotate(0deg);
+@media (max-width: 800px) {
+    @keyframes rotationFleche {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(90deg);
+        }
     }
 
-    100% {
-        transform: rotate(90deg);
-    }
-}
+    @keyframes apparitionSousMenu {
+        0% {
+            box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0);
+        }
 
-@keyframes apparitionSousMenu {
-    0% {
-        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0);
-        border-top: 3px solid black;
+        30% {
+            box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        100% {
+            max-height: 50em;
+            box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+        }
     }
 
-    30% {
-        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
-    }
-
-    100% {
-        max-height: 50em;
-        border-top: 3px solid black;
-        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
-    }
-}
-
-@media screen and (max-width: 800px) {
     header {
         height: 55px;
         width: 100%;
         background-color: grey;
         border: black solid 2px;
+        justify-content: space-between;
     }
 
     .Himg {
@@ -43,8 +42,33 @@
         width: auto;
     }
 
-    .Hbutton {
+    .Hbuttonim {
+        height: 55px;
+        width: 55px;
         background-color: transparent;
+        border: black solid 0px;
+    }
+
+    .Hbuttonim>#menub {
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    .Hbuttonim>img {
+        height: 100%;
+        width: auto;
+    }
+
+    .Hbuttonim:hover {
+        background-color: rgb(255, 136, 0);
+    }
+
+    .Hbuttonim:hover>#menub {
+        animation: apparitionSousMenu 1s forwards;
+    }
+
+    .Hbutton>p {
+        padding: 3px;
         border: black solid 1px;
         border-radius: 20px;
     }
@@ -56,6 +80,9 @@
     .Hbutton>a {
         color: black;
         text-decoration: none;
+        padding: 3px;
+        border: black solid 1px;
+        border-radius: 20px;
     }
 
     .Hbutton:hover>a {
@@ -63,7 +90,7 @@
     }
 
     .Hli {
-        border: black solid 1px;
+        border-top: black solid 1px;
     }
 
     .Hli>a {
@@ -77,6 +104,10 @@
 
     .Hli>a:active {
         color: rgb(255, 174, 82);
+    }
+
+    .menuDeroulant {
+        display: flex;
     }
 
     .menuDeroulant>p:after {
@@ -116,6 +147,7 @@
     #menu {
         height: 100%;
         width: 100%;
+        display: none;
     }
 
     #menu>button {
@@ -123,9 +155,16 @@
         height: 33%;
     }
 
+    #menub {
+        height: 240px;
+        width: 110px;
+    }
+
     #info {
-        width: 10%;
+        min-width: 100px;
+        max-height: 55px;
         height: 100%;
+        overflow: auto;
     }
 
     #profil {
@@ -134,7 +173,35 @@
     }
 }
 
-@media screen and (min-width: 801px) {
+@media (min-width: 801px) {
+
+    @keyframes rotationFleche {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(90deg);
+        }
+    }
+
+    @keyframes apparitionSousMenu {
+        0% {
+            box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0);
+            border-top: 3px solid black;
+        }
+
+        30% {
+            box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        100% {
+            max-height: 50em;
+            border-top: 3px solid black;
+            box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+        }
+    }
+
     header {
         height: 55px;
         width: 100%;
@@ -143,6 +210,18 @@
     }
 
     .Himg {
+        height: 100%;
+        width: auto;
+    }
+
+    .Hbuttonim {
+        height: 100%;
+        width: 55px;
+        background-color: transparent;
+        border: black solid 0px;
+    }
+
+    .Hbuttonim>img {
         height: 100%;
         width: auto;
     }
@@ -202,8 +281,8 @@
     }
 
     #fla {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
 
     #logo {
@@ -227,9 +306,16 @@
         height: 33%;
     }
 
+    #menub {
+        display: none;
+    }
+
     #info {
+        min-width: 100px;
+        max-height: 55px;
         width: 10%;
         height: 100%;
+        overflow: auto;
     }
 
     #profil {

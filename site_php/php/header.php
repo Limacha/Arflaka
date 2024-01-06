@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Arflaka: header</title>
+    <link rel="icon" href="../image/Arflaka.png">
     <link rel="stylesheet" href="../css/flex.css">
     <link rel="stylesheet" href="../css/header.css">
 </head>
@@ -12,7 +13,59 @@
 <body>
     <header class="flex centerV">
         <div id="logo" class="flex centerV">
-            <img class="Himg" src="../image/Arflaka.png" alt="name">
+            <button class="Hbuttonim">
+                <img src="../image/Arflaka.png" alt="name">
+                <div id="menub" class="flex centerV column spaceAround">
+                    <il class="Hbutton">
+                        <a href="#">acceuil</a>
+                    </il>
+                    <il class="menuDeroulant Hbutton">
+                        <p>discord </p>
+                        <ul class="sousMenuDeroulant">
+                            <li class="Hli">
+                                <a href="https://discord.gg/s2ZByWgwSP">lien</a>
+                            </li>
+                            <li class="Hli">
+                                <a href="#">info</a>
+                            </li>
+                            <li class="Hli">
+                                <a href="#">jeux relier</a>
+                            </li>
+                        </ul>
+                    </il>
+                    <il class="menuDeroulant Hbutton">
+                        <p>creation </p>
+                        <ul class="sousMenuDeroulant">
+                            <li class="Hli">
+                                <a href="#">1 nom crea</a>
+                            </li>
+                            <li class="Hli">
+                                <a href="#">2 nom crea</a>
+                            </li>
+                        </ul>
+                    </il>
+                    <il class="menuDeroulant Hbutton">
+                        <p>jeux </p>
+                        <ul class="sousMenuDeroulant">
+                            <li class="Hli">
+                                <a href="#">1 nom jeu</a>
+                            </li>
+                            <li class="Hli">
+                                <a href="#">2 nom jeu</a>
+                            </li>
+                        </ul>
+                    </il>
+                    <il class="Hbutton">
+                        <a href="#">forum</a>
+                    </il>
+                    <il class="Hbutton">
+                        <a href="#">objectif</a>
+                    </il>
+                    <il class="Hbutton">
+                        <a href="#">aide</a>
+                    </il>
+                </div>
+            </button>
             <p> Arflaka</p>
         </div>
         <div id="menu" class="flex centerV">
