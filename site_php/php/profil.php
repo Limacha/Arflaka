@@ -15,6 +15,9 @@ require_once "function.php";
 
 <body class="flex column centerV">
     <?php include 'header.php' ?>
+
+    <a href="inscription.php"><button id="inscription" name="inscription">inscription</button></a>
+    <a href="connection.php"><button id="connection" name="connection">connection</button></a>
     <footer></footer>
 </body>
 
