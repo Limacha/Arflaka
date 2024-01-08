@@ -15,6 +15,11 @@ require_once "function.php";
 
 <body>
     <?php include 'header.php' ?>
+
+    <div id="planetDiv">
+
+    </div>
+
     <?php include "footer.php" ?>
 </body>
 

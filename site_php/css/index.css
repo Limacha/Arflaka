@@ -3,10 +3,8 @@
     padding: 0%;
 }
 
-body {
+#planetDiv {
     background-image: url(../image/planete.jpg);
-    background-size: 100% 100%;
-    min-height: 872px;
 }
 
 button {

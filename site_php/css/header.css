@@ -61,10 +61,6 @@
         width: auto;
     }
 
-    .Hbuttonim:hover {
-        background-color: rgb(255, 136, 0);
-    }
-
     .Hbuttonim:hover>#menub {
         animation: apparitionSousMenu 1s forwards;
     }
@@ -109,10 +105,6 @@
         color: rgb(255, 174, 82);
     }
 
-    .menuDeroulant {
-        display: flex;
-    }
-
     .menuDeroulant>p:after {
         content: '❯';
         display: inline-block;
@@ -128,7 +120,7 @@
     }
 
     .menuDeroulant:hover>.sousMenuDeroulant {
-        animation: apparitionSousMenu 1s forwards;
+        animation: apparitionSousMenu 3s forwards;
     }
 
     #fla {
@@ -159,8 +151,11 @@
     }
 
     #menub {
-        height: 240px;
-        width: 110px;
+        height: 350px;
+        width: 125px;
+        background-color: grey;
+        position: relative;
+        z-index: 101;
     }
 
     #info {
