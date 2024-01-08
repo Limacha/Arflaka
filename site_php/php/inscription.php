@@ -16,6 +16,8 @@ require_once "function.php";
 
 <body class="flex column centerV">
     <?php include 'header.php' ?>
+    <?php include "footer.php" ?>
+
     <a href="connection.php"><button id="connection" name="connection">connection</button></a>
 
     <h1>Insciption</h1>

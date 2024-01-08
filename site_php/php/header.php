@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +19,7 @@
                 <img src="../image/Arflaka.png" alt="name">
                 <div id="menub" class="flex centerV column spaceAround">
                     <il class="Hbutton">
-                        <a href="#">acceuil</a>
+                        <a href="index.php">acceuil</a>
                     </il>
                     <il class="menuDeroulant Hbutton">
                         <p>discord </p>
@@ -70,7 +72,7 @@
         </div>
         <div id="menu" class="flex centerV">
             <button class="Hbutton">
-                <a href="#">acceuil</a>
+                <a href="index.php">acceuil</a>
             </button>
             <button class="menuDeroulant Hbutton">
                 <p>discord </p>
