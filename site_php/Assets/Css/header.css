@@ -6,6 +6,8 @@ header {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
+    position: relative;
+    z-index: 100;
 }
 
 .Himg {
@@ -34,6 +36,10 @@ header {
 .menuDeroulant>p:after {
     content: '❯';
     display: inline-block;
+}
+
+.menuDeroulant>p:hover {
+    cursor: pointer;
 }
 
 .menuDeroulant:hover>p:after {
