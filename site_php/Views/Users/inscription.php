@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
-<?php
-require_once "function.php";
-
-?>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arflaka: Inscription</title>
-    <link rel="icon" href="../image/Arflaka.png">
-    <link rel="stylesheet" href="../css/flex.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-
-<body class="flex column centerV">
-    <?php include 'header.php' ?>
-    <?php include "footer.php" ?>
-
-    <a href="connection.php"><button id="connection" name="connection">connection</button></a>
+<div id="body" class="flex column centerV">
+    <a href="connection"><button id="connection" name="connection">connection</button></a>
 
     <h1>Insciption</h1>
-    <form action="connection.php" method="POST" class="flex column centerV">
+    <form action="connection" method="POST" class="flex column centerV">
         <div>
             <div id="divFieldset" class="flex spaceBetween">
                 <fieldset>
@@ -68,13 +49,9 @@ require_once "function.php";
                 </fieldset>
             </div>
             <div class="flex spaceBetween">
-                <button id="restart" name="restart">Reinitialiser</button>
                 <button id="send" name="send">Envoyer</button>
             </div>
         </div>
 
     </form>
-
-</body>
-
-</html>
+</div>

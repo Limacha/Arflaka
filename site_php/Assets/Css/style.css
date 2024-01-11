@@ -1,5 +1,44 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
 body {
-    background-color: lightblue;
+    background-color: var(--siteBackgroundColor);
+}
+
+p {
+    color: var(--textColor);
+}
+
+h1 {
+    text-transform: capitalize;
+    color: var(--textColor);
+}
+
+h2 {
+    text-transform: capitalize;
+    color: var(--textColor);
+}
+
+h3 {
+    text-transform: capitalize;
+    color: var(--textColor);
+}
+
+h4 {
+    text-transform: capitalize;
+    color: var(--textColor);
+}
+
+h5 {
+    text-transform: capitalize;
+    color: var(--textColor);
+}
+
+h6 {
+    text-transform: capitalize;
+    color: var(--textColor);
 }
 
 form {
@@ -43,19 +82,3 @@ button {
 
     border-radius: 20px;
 }
-
-h1 {
-    text-transform: capitalize;
-}
-
-@media (max-width: 800px) {
-    #divFieldset {
-        flex-direction: column;
-    }
-}
-
-/*#send {
-}*/
-
-/*#restart {
-}*/
