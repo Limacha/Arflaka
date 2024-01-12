@@ -2,18 +2,18 @@
     <a href="connection"><button id="connection" name="connection">connection</button></a>
 
     <h1>Inscription</h1>
-    <form action="profil" method="POST" class="flex column centerV">
+    <form action="inscription" method="POST" class="flex column centerV">
         <div>
             <div id="divFieldset" class="flex spaceBetween">
                 <fieldset>
                     <legend>donnés personnel</legend>
                     <div>
                         <label for="name">votre prenom</label>
-                        <input type="text" id="name" name="name" maxlength="30" placeholder="prenom: 5-30" required>
+                        <input type="text" id="name" name="name" maxlength="30" placeholder="prenom: 30" required>
                     </div>
                     <div>
                         <label for="surname">votre nom</label>
-                        <input type="text" id="surname" name="surname" maxlength="30" placeholder="nom: 5-30" required>
+                        <input type="text" id="surname" name="surname" maxlength="30" placeholder="nom: 30" required>
                     </div>
                     <div>
                         <label for="date">votre date de naissance</label>

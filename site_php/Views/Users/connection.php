@@ -2,7 +2,7 @@
     <a href="inscription"><button id="inscription" name="inscription">inscription</button></a>
 
     <h1>Connection</h1>
-    <form action="profil" method="POST">
+    <form action="connection" method="POST">
         <fieldset class="centerV">
             <legend>connection</legend>
             <div>
@@ -15,7 +15,7 @@
             </div>
         </fieldset>
         <div class="flex spaceAround">
-            <button id="send" name="send">Envoyer</button>
+            <button id="connectEnd" name="connectEnd">Envoyer</button>
         </div>
     </form>
 </div>

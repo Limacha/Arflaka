@@ -1,25 +1,13 @@
 <?php
-require_once './Models/functionModels.php';
-
 $servername = 'localhost';
 $username = 'root';
 $password = 'root';
 $dbname = 'global';
 
-$strConnection = "mysql:host=$servername;dbname=$dbname";
-
-//On essaie de se connecter
-try {
-    $pdo = new PDO($strConnection, $username, $password);
-    //On définit le mode d'erreur de PDO sur Exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    debug_to_console('Connexion réussie');
-} catch (PDOException $e) {
-    debug_to_console("Erreur : " . $e->getMessage());
-}
+$pdo = connectionPDO($servername, $username, $password, $dbname);
 
 if (isset($_POST['inscriEnd'])) {
-    $array = array(
+    $data = array(
         "userName" => $_POST['name'],
         "userSurname" => $_POST['surname'],
         "userBirthday" => $_POST['date'],
@@ -31,27 +19,36 @@ if (isset($_POST['inscriEnd'])) {
         "userDescription" => $_POST['description']
     );
 
-    $cate = "";
-    $val = "'";
-    $i = 0;
-    foreach ($array as $key => $value) {
-        $i++;
-        if (!empty($value)) {
+    $sql = "SELECT EXISTS( SELECT * FROM global.users WHERE global.users.userPseudo = '" . $data['userPseudo'] . "' ) as verif;";
 
-            $cate = $cate . $key . ", ";
-            $val = $val . $value . "', '";
-        }
-    }
-
-    $cate = substr($cate, 0, -2);
-    $val = substr($val, 0, -3);
-
-    $sql = 'INSERT INTO users (' . $cate . ') VALUES (' . $val . ');';
-
-    unset($key);
-    unset($value);
-
-    executeSql($sql, $pdo);
+    $result = executeSql($sql, $pdo);
     debug_to_console('info recuperer');
-    $connected = true;
+    if ($result[0]['verif'] == 0) {
+        $cate = "";
+        $val = "'";
+        $i = 0;
+        foreach ($data as $key => $value) {
+            $i++;
+            if (!empty($value)) {
+
+                $cate = $cate . $key . ", ";
+                $val = $val . $value . "', '";
+            }
+        }
+
+        $cate = substr($cate, 0, -2);
+        $val = substr($val, 0, -3);
+
+        $sql = 'INSERT INTO users (' . $cate . ') VALUES (' . $val . ');';
+
+        unset($key);
+        unset($value);
+
+        executeSql($sql, $pdo);
+        debug_to_console('info recuperer');
+        $_SESSION['connected'] = true;
+        $_SESSION['pseudo'] = $data['userPseudo'];
+        $_SESSION['password'] = $data['userPassword'];
+        header("Location: profil");
+    }
 }

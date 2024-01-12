@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="<?= $cssDirectory ?>accueil.css">
     <link rel="stylesheet" href="<?= $cssDirectory ?>inscription.css">
+    <link rel="stylesheet" href="<?= $cssDirectory ?>profil.css">
 </head>
 
 
