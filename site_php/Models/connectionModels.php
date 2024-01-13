@@ -18,7 +18,6 @@ if (isset($_POST['connectEnd'])) {
     debug_to_console('info recuperer');
     //debug_to_console($result[0]['verif'], 'resulta');
     if ($result[0]['verif'] == 1) {
-        $_SESSION['connected'] = true;
         $_SESSION['pseudo'] = $data['userPseudo'];
         $_SESSION['password'] = $data['userPassword'];
         debug_to_console('header');

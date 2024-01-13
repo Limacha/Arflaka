@@ -8,6 +8,6 @@ if ($uri === "/Arflaka/site_php/index.php" || $uri === "/Arflaka/site_php/") {
 } else {
     //erreur 404
     $title = $title . "404";
-    $template .= "connection.php";
+    $template .= "404.php";
     require_once("./Views/base.php");
 }

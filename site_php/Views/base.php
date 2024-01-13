@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?= $cssDirectory ?>footer.css">
 
     <link rel="stylesheet" href="<?= $cssDirectory ?>accueil.css">
+    <link rel="stylesheet" href="<?= $cssDirectory ?>404.css">
     <link rel="stylesheet" href="<?= $cssDirectory ?>inscription.css">
     <link rel="stylesheet" href="<?= $cssDirectory ?>profil.css">
 </head>

@@ -7,9 +7,6 @@ $menuContent = '
  <p>discord </p>
  <ul class="sousMenuDeroulant">
      <li class="Hli">
-         <a href="https://discord.gg/s2ZByWgwSP">lien</a>
-     </li>
-     <li class="Hli">
          <a href="#">info</a>
      </li>
      <li class="Hli">

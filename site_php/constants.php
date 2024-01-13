@@ -19,7 +19,6 @@ $cssDirectory = "./Assets/Css/";
 $jsDirectory = "./Assets/Scripts/";
 
 if (!isset($_SESSION['connected'])) {
-    $_SESSION['connected'] = false;
     $_SESSION['pseudo'] = null;
     $_SESSION['password'] = null;
 }

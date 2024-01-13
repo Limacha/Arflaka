@@ -12,32 +12,32 @@ p {
 }
 
 h1 {
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--textColor);
 }
 
 h2 {
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--textColor);
 }
 
 h3 {
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--textColor);
 }
 
 h4 {
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--textColor);
 }
 
 h5 {
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--textColor);
 }
 
 h6 {
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--textColor);
 }
 

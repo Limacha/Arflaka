@@ -36,17 +36,17 @@ if (isset($_POST['inscriEnd'])) {
             }
         }
 
+        unset($key);
+        unset($value);
+
+
         $cate = substr($cate, 0, -2);
         $val = substr($val, 0, -3);
 
         $sql = 'INSERT INTO users (' . $cate . ') VALUES (' . $val . ');';
 
-        unset($key);
-        unset($value);
-
         executeSql($sql, $pdo);
         debug_to_console('info recuperer');
-        $_SESSION['connected'] = true;
         $_SESSION['pseudo'] = $data['userPseudo'];
         $_SESSION['password'] = $data['userPassword'];
         header("Location: profil");
