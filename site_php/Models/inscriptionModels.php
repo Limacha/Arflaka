@@ -1,12 +1,8 @@
 <?php
-$servername = 'localhost';
-$username = 'root';
-$password = 'root';
-$dbname = 'global';
-
-$pdo = connectionPDO($servername, $username, $password, $dbname);
+$pdo = connectionPDO('localhost', 'root', 'root', 'global');
 
 if (isset($_POST['inscriEnd'])) {
+    // stock de toute les donne
     $data = array(
         "userName" => $_POST['name'],
         "userSurname" => $_POST['surname'],
@@ -19,20 +15,21 @@ if (isset($_POST['inscriEnd'])) {
         "userDescription" => $_POST['description']
     );
 
-    $sql = "SELECT EXISTS( SELECT * FROM global.users WHERE global.users.userPseudo = '" . $data['userPseudo'] . "' ) as verif;";
-
+    $sql = 'SELECT EXISTS( SELECT * FROM global.users WHERE global.users.userPseudo = "' . $data['userPseudo'] . '" ) as verif;';
     $result = executeSql($sql, $pdo);
-    debug_to_console('info recuperer');
-    if ($result[0]['verif'] == 0) {
+
+    // verification si il existe deja et il n'est pas deja connecter
+    if ($result[0]['verif'] == 0 && empty($_SESSION['userID'])) {
         $cate = "";
-        $val = "'";
+        $val = '"';
         $i = 0;
+        // creation de la commande sql
         foreach ($data as $key => $value) {
             $i++;
             if (!empty($value)) {
 
                 $cate = $cate . $key . ", ";
-                $val = $val . $value . "', '";
+                $val = $val . $value . '", "';
             }
         }
 
@@ -43,12 +40,29 @@ if (isset($_POST['inscriEnd'])) {
         $cate = substr($cate, 0, -2);
         $val = substr($val, 0, -3);
 
-        $sql = 'INSERT INTO users (' . $cate . ') VALUES (' . $val . ');';
-
+        $sql = 'INSERT INTO users (' . $cate . ', userRole, userFla, userArka) VALUES (' . $val . ', "chomeur", 0, 0);';
         executeSql($sql, $pdo);
-        debug_to_console('info recuperer');
-        $_SESSION['pseudo'] = $data['userPseudo'];
-        $_SESSION['password'] = $data['userPassword'];
+
+        $sql = 'SELECT userID from global.users where global.users.userPseudo = "' . $data['userPseudo'] . '" AND global.users.userPassword = "' . $data['userPassword'] . '" ;';
+        $result = executeSql($sql, $pdo);
+
+        $_SESSION['ID'] = $result[0]['userID'];
+        //creation de l'image avatar
+        if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
+            debug_to_console($_FILES['avatar']['name']);
+            $maxSize = 2097152;
+            $goodExtension = array('jpg', 'jpeg', 'png', 'webp');
+            if ($_FILES['avatar']['size'] <= $maxSize) {
+                $parts = preg_split('/\./', $_FILES['avatar']['name']);
+                $extension = strtolower(end($parts));
+                if (in_array($extension, $goodExtension)) {
+                    $path = "./Users/Avatars/" . $_SESSION['ID'] . '.png';
+                    $move = move_uploaded_file($_FILES['avatar']['tmp_name'], $path);
+                }
+            };
+        }
+        // refresh de la page vers profil si sa a marcher
         header("Location: profil");
+        exit();
     }
 }

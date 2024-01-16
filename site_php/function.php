@@ -7,3 +7,9 @@ function debug_to_console($data, $name = 'php')
         echo ("<script>console.log('" . $name . ": " . $data . "');</script>");
     }
 }
+
+
+function change_css($var, $value)
+{
+    echo "<script>document.documentElement.style.setProperty('" . $var . "', '" . $value . "');</script>";
+}

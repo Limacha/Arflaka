@@ -1,27 +1,13 @@
 <?php
-$servername = 'localhost';
-$username = 'root';
-$password = 'root';
-$dbname = 'global';
+$pdo = connectionPDO('localhost', 'root', 'root', 'global');
 
-$pdo = connectionPDO($servername, $username, $password, $dbname);
-
-if (isset($_POST['connectEnd'])) {
-    $data = array(
-        "userPseudo" => $_POST['pseudo'],
-        "userPassword" => $_POST['password']
-    );
-
-    $sql = "SELECT EXISTS( SELECT * FROM global.users WHERE global.users.userPseudo = '" . $data['userPseudo'] . "' AND global.users.userPassword = '" . $data['userPassword'] . "' ) as verif;";
-
+if (isset($_POST['connectEnd']) && empty($_SESSION['ID'])) {
+    $sql = 'SELECT userID from global.users where global.users.userPseudo = "' . $_POST['pseudo'] . '" AND global.users.userPassword = "' . $_POST['password'] . '" ;';
     $result = executeSql($sql, $pdo);
-    debug_to_console('info recuperer');
-    //debug_to_console($result[0]['verif'], 'resulta');
-    if ($result[0]['verif'] == 1) {
-        $_SESSION['pseudo'] = $data['userPseudo'];
-        $_SESSION['password'] = $data['userPassword'];
-        debug_to_console('header');
+    // debug_to_console($result[0]['userID'], 'resulta (userID)');
+    if (!empty($result[0]['userID'])) {
+        $_SESSION['ID'] = $result[0]['userID'];
         header("Location: profil");
-        debug_to_console('header');
+        exit();
     }
 }

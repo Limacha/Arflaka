@@ -14,16 +14,8 @@ $menuContent = '
      </li>
  </ul>
 </li>
-<li class="menuDeroulant Hbutton">
- <p>creation </p>
- <ul class="sousMenuDeroulant">
-     <li class="Hli">
-         <a href="#">1 nom crea</a>
-     </li>
-     <li class="Hli">
-         <a href="#">2 nom crea</a>
-     </li>
- </ul>
+<li class="Hbutton">
+ <a href="#">creation</a>
 </li>
 <li class="Hbutton">
  <a href="#">forum</a>
@@ -50,9 +42,9 @@ $menuContent = '
         <?= $menuContent ?>
     </div>
     <div id="info">
-        <p>role: inconnu</p>
-        <p class="flex centerV">fla: 0 <img id="fla" src="<?= $flaImg ?>" alt=""></p>
-        <p>Arka: 0 <img src="" alt=""></p>
+        <p>role: <?= $role ?></p>
+        <p class="flex centerV">fla: <?= $fla ?> <img id="fla" src="<?= $flaImg ?>" alt=""></p>
+        <p>Arka: <?= $arka ?> <img src="" alt=""></p>
     </div>
     <div id="profil">
         <a href="profil">

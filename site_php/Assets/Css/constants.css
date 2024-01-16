@@ -3,6 +3,7 @@
     --footerHeight: 50px;
     --textColor: rgb(0, 0, 0);
     --siteBackgroundColor: rgb(173, 216, 230);
+    --screenHeight: calc(100VH - calc(calc(var(--footerHeight) + var(--headerHeight)) + 2px));
 
     --planetDivBackground: url(../Images/planete.png);
     --planetDivHeight: 100%;
@@ -10,4 +11,7 @@
     --discordLogo: url(../Images/discordLogo.png);
     --heightSocialButton: 40px;
     --widthSocialButton: 40px;
+
+    --loginDisplay: none;
+    --logoutDisplay: none;
 }

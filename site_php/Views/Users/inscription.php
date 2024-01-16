@@ -2,7 +2,7 @@
     <a href="connection"><button id="connection" name="connection">connection</button></a>
 
     <h1>Inscription</h1>
-    <form action="inscription" method="POST" class="flex column centerV">
+    <form action="inscription" method="POST" class="flex column centerV" enctype="multipart/form-data">
         <div>
             <div id="divFieldset" class="flex spaceBetween">
                 <fieldset>
@@ -45,6 +45,10 @@
                     <div class="flex">
                         <label for="description">Une petit description</label>
                         <textarea name="description" id="description" cols="35" rows="8" maxlength="255" placeholder="votre description en 255 characters max"></textarea>
+                    </div>
+                    <div>
+                        <label for="avatar">Une photo de profil</label>
+                        <input type="file" name="avatar" id="avatar" accept="image/*"></input>
                     </div>
                 </fieldset>
             </div>

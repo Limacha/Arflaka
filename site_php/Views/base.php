@@ -20,8 +20,10 @@
     <link rel="stylesheet" href="<?= $cssDirectory ?>404.css">
     <link rel="stylesheet" href="<?= $cssDirectory ?>inscription.css">
     <link rel="stylesheet" href="<?= $cssDirectory ?>profil.css">
+    <link rel="stylesheet" href="<?= $cssDirectory ?>arflaka.css">
 </head>
 
+<script src="<?= $script ?>"></script>
 
 
 <body>
@@ -33,7 +35,5 @@
 
     <?php include $footer ?>
 </body>
-
-<script src="<?= $script ?>"></script>
 
 </html>
