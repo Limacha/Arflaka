@@ -1,0 +1,98 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-color: var(--siteBackgroundColor);
+}
+
+main {
+    height: calc(100vh - calc(calc(var(--footerHeight) + var(--headerHeight)) + 2px));
+}
+
+p {
+    color: var(--textColor);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: var(--textColor);
+}
+
+h2 {
+    text-transform: uppercase;
+    color: var(--textColor);
+}
+
+h3 {
+    text-transform: uppercase;
+    color: var(--textColor);
+}
+
+h4 {
+    text-transform: uppercase;
+    color: var(--textColor);
+}
+
+h5 {
+    text-transform: uppercase;
+    color: var(--textColor);
+}
+
+h6 {
+    text-transform: uppercase;
+    color: var(--textColor);
+}
+
+form {
+    width: 35%;
+}
+
+fieldset {
+    display: flex;
+    border-color: blue;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+input {
+    border-radius: 15px;
+    height: 25px;
+    width: 150px;
+    text-align: center;
+}
+
+input[type=file] {
+    border-radius: 0px;
+}
+
+input[type=color] {
+    border-radius: 0px;
+}
+
+input[type=range] {
+    appearance: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: rgb(190, 121, 255);
+
+    width: 150px;
+    height: 75px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.fullHeight {
+    height: var(--screenHeight);
+}

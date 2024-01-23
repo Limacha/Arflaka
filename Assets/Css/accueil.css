@@ -1,0 +1,19 @@
+#planetDiv {
+    background-image: var(--planetDivBackground);
+    background-size: 100%;
+    width: 100%;
+    height: calc(100vh - calc(calc(var(--footerHeight) + var(--headerHeight)) + 2px));
+}
+
+#planetDivText {
+    background: rgba(34, 34, 34, 0.5);
+    width: 30%;
+    height: 100%;
+    overflow: auto;
+}
+
+#planetDivText>p {
+    margin: 10px;
+    color: rgb(255, 255, 255);
+
+}

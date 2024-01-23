@@ -1,7 +1,0 @@
-#login {
-    display: var(--loginDisplay);
-}
-
-#logout {
-    display: var(--logoutDisplay);
-}
