@@ -17,7 +17,10 @@ $footer = "./Views/Components/footer.php";
 $phpDirectory = "./Views/";
 $phpUserDirectory = "./Views/Users/";
 $phpAdminDirectory = "./Views/Users/";
-$accueil = "./index.php";
+
+$accueil = "/index";
+$hierachie = "/hierachie";
+$objectif = "/objectif";
 
 $cssDirectory = "./Assets/Css/";
 

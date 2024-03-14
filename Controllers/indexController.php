@@ -1,7 +1,7 @@
 <?php
 $template = $phpDirectory;
 $css = $cssDirectory;
-if ($uri === "/index.php" || $uri === "/") {
+if ($uri === "/index" || $uri === "/") {
     $title = $title . "Accueil";
     $css .= 'accueil.css';
     $template .= "accueil.php";

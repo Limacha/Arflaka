@@ -56,17 +56,20 @@ header {
 }
 
 .Hbutton {
+    color: black;
+    text-decoration: none;
+    padding: 3px;
+    width: 15%;
+    text-align: center;
+}
+
+
+.Hbutton>li {
     background-color: transparent;
     border: black solid 1px;
     border-radius: 20px;
     cursor: pointer;
-}
-
-
-.Hbutton>a {
-    color: black;
-    text-decoration: none;
-    padding: 3px;
+    list-style-type: none;
 }
 
 .Hbutton:hover {
@@ -148,6 +151,10 @@ header {
         animation: apparitionSousMenu 5s forwards;
     }
 
+    .Hbutton {
+        width: 90%;
+    }
+
     #logo {
         height: var(--headerHeight);
         width: var(--headerHeight);
@@ -162,7 +169,6 @@ header {
     #menu {
         display: none;
     }
-
 }
 
 @media (min-width: 801px) {
