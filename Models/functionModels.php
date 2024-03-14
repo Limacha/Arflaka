@@ -45,3 +45,22 @@ function modifSession($id)
     $_SESSION['fla'] =  $result[0]->userFla;
     $_SESSION['arka'] =  $result[0]->userArka;
 }
+
+function verifPasword()
+{
+    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
+    $sql = 'SELECT userPassword from global.users where global.users.userId = "' . $_SESSION['ID'] . '" ;';
+    $result = executeSql($sql, $pdo);
+    if (!empty($result[0]->userPassword)) {
+        if ($result[0]->userPassword == $_POST["password"]) {
+            debug_to_console("good password");
+            $pdo = connectionPDO('localhost', 'root', 'root', 'global');
+            $sql = 'DELETE FROM users WHERE userID = "' . $_SESSION['ID'] . '" AND userPassword = "' . $_POST['password'] . '";';
+            $result = executeSql($sql, $pdo);
+            session_destroy();
+            header("Location: profil");
+        } else {
+            debug_to_console("password incorect");
+        }
+    }
+}

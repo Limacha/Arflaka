@@ -50,4 +50,13 @@ if ($uri === "/profil") {
 
     $template .= "editProfil.php";
     require_once("./Views/base.php");
+} elseif ($uri === "/deleteProfil") {
+    $title = $title . "profil deleting";
+
+    if (isset($_POST['deleteEnd'])) {
+        verifPasword();
+    }
+
+    $template .= "deleteProfil.php";
+    require_once("./Views/base.php");
 }

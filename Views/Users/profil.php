@@ -16,6 +16,11 @@
                     <p>modifier le profil</p>
                 </button>
             </form>
+            <form action="deleteProfil" method="POST">
+                <button id="deleteButton" name="deleteButton">
+                    <p>suprimer le profil</p>
+                </button>
+            </form>
         </div>
 
     </div>
