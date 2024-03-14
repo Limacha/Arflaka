@@ -1,0 +1,36 @@
+-- SQLBook: Markup
+creation d'une table
+-- SQLBook: Code
+CREATE TABLE medicament (
+    medicID int NOT NULL AUTO_INCREMENT,
+    medicNom varchar(30),
+    medicType varchar(50),
+    primary key (medicID)
+);
+-- SQLBook: Markup
+insertion de valeur dans une table
+-- SQLBook: Code
+INSERT INTO medecin (medNom, medPrenom, medNumInami)
+VALUES
+	('Petit', 'Solune', '01234567899'),
+	('Brahy', 'Adrien', '01234567899'),
+	('Ponchaut', 'Nicolas', '01234567899');
+-- SQLBook: Markup
+selection d'element dans une base
+-- SQLBook: Code
+SELECT medNom, medPrenom FROM medecin
+WHERE medNumInami='01234567899';
+-- SQLBook: Markup
+obtenir le nombre d'element de qq chose
+-- SQLBook: Code
+SELECT count(*) from medecin;
+-- SQLBook: Markup
+uptade un element
+-- SQLBook: Code
+UPDATE medecin
+SET medNom = "Ponchaut"
+WHERE medecin.medNom = "ponchaut";
+-- SQLBook: Markup
+delete un element
+-- SQLBook: Code
+DELETE FROM medecin WHERE medNom = "ponchaur";
