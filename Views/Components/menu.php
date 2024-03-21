@@ -1,5 +1,5 @@
 <a href="<?= $accueil ?>" class="Hbutton">
-    <li>acceuil</li>
+    <li>accueil</li>
 </a>
 
 <a href="<?= $hierachie ?>" class="Hbutton">

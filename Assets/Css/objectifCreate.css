@@ -1,0 +1,14 @@
+table {
+    border: 2px solid blue;
+    width: 380px;
+    height: auto;
+}
+
+th {
+    text-align: start;
+}
+
+table textarea {
+    width: 150px;
+    height: 100px;
+}

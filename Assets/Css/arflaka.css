@@ -1,23 +1,8 @@
-.users {
-    width: 150px;
-    height: 200px;
-    border: black solid 2px;
-    border-radius: 10px;
-    padding: 2px;
-    margin-left: 5px;
-    margin-top: 5px;
+main {
+    height: auto;
 }
 
-.users>img {
-    height: 75px;
-    width: 75px;
-}
-
-.users>div {
-    width: 100%;
-}
-
-.users>button {
+button {
     background-color: rgb(190, 121, 255);
 
     width: 75px;
@@ -30,11 +15,55 @@
     cursor: pointer;
 }
 
+.users {
+    width: 150px;
+    height: 199px;
+    border: black solid 2px;
+    border-radius: 10px;
+    padding: 2px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.users>img {
+    border-radius: 100%;
+    height: 75px;
+    width: 75px;
+}
+
+.users>div {
+    width: 100%;
+}
+
 #arflaka {
     margin-left: 2px;
 }
 
 #listPlayers {
+    width: 100%;
+    height: 212.2px;
+    overflow-y: auto;
+}
+
+.objectifs {
+    width: 150px;
+    height: 199px;
+    border: black solid 2px;
+    border-radius: 10px;
+    padding: 2px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.objectifs>div {
+    width: 100%;
+}
+
+#objectif {
+    margin-left: 2px;
+}
+
+#listObj {
     width: 100%;
     height: 212.2px;
     overflow-y: auto;

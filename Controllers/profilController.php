@@ -19,7 +19,6 @@ if ($uri === "/profil") {
     $template .= "profil.php";
     require_once("./Views/base.php");
 } elseif ($uri === "/inscription") {
-    require_once './Models/inscriptionModels.php';
     $title = $title . "inscription";
 
     if (isset($_POST['inscriEnd'])) {
@@ -30,7 +29,6 @@ if ($uri === "/profil") {
     $template .= "inscription.php";
     require_once("./Views/base.php");
 } elseif ($uri === "/connection") {
-    require_once './Models/connectionModels.php';
     $title = $title . "connection";
 
     if (isset($_POST['connectEnd']) && empty($_SESSION['ID'])) {
@@ -41,22 +39,23 @@ if ($uri === "/profil") {
     $template .= "connection.php";
     require_once("./Views/base.php");
 } elseif ($uri === "/editProfil") {
-    require_once './Models/editProfilModels.php';
     $title = $title . "profil editing";
 
     if (isset($_POST['editEnd'])) {
         editProfil();
     }
-
+    $css .= "editProfil.css";
     $template .= "editProfil.php";
     require_once("./Views/base.php");
-} elseif ($uri === "/deleteProfil") {
+}
+/* elseif ($uri === "/deleteProfil") {
     $title = $title . "profil deleting";
 
     if (isset($_POST['deleteEnd'])) {
-        verifPasword();
+        verifPasword('deleteProfil');
     }
 
     $template .= "deleteProfil.php";
     require_once("./Views/base.php");
 }
+*/

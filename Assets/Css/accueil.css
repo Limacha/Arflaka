@@ -2,7 +2,7 @@
     background-image: var(--planetDivBackground);
     background-size: 100%;
     width: 100%;
-    height: calc(100vh - calc(calc(var(--footerHeight) + var(--headerHeight)) + 2px));
+    height: calc(100vh - calc(calc(var(--footerHeight) + var(--headerHeight))));
 }
 
 #planetDivText {

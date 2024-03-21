@@ -46,21 +46,49 @@ function modifSession($id)
     $_SESSION['arka'] =  $result[0]->userArka;
 }
 
-function verifPasword()
+function verifPasword($function)
 {
     $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $sql = 'SELECT userPassword from global.users where global.users.userId = "' . $_SESSION['ID'] . '" ;';
     $result = executeSql($sql, $pdo);
     if (!empty($result[0]->userPassword)) {
         if ($result[0]->userPassword == $_POST["password"]) {
-            debug_to_console("good password");
-            $pdo = connectionPDO('localhost', 'root', 'root', 'global');
-            $sql = 'DELETE FROM users WHERE userID = "' . $_SESSION['ID'] . '" AND userPassword = "' . $_POST['password'] . '";';
-            $result = executeSql($sql, $pdo);
-            session_destroy();
-            header("Location: profil");
+            if (function_exists($function)) {
+                $function();
+            } else {
+                header("Location: " . $function);
+            }
         } else {
             debug_to_console("password incorect");
+            header("Location: accueil");
         }
     }
+}
+
+function insertInto($data, $base)
+{
+    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
+
+    $cate = "";
+    $val = '"';
+    $i = 0;
+    // creation de la commande sql
+    foreach ($data as $key => $value) {
+        $i++;
+        if (!empty($value)) {
+
+            $cate = $cate . $key . ", ";
+            $val = $val . $value . '", "';
+        }
+    }
+
+    unset($key);
+    unset($value);
+
+
+    $cate = substr($cate, 0, -2);
+    $val = substr($val, 0, -3);
+
+    $sql = 'INSERT INTO ' .  $base . ' (' . $cate . ') VALUES (' . $val . ');';
+    executeSql($sql, $pdo);
 }

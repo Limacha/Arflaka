@@ -7,9 +7,10 @@ debug_to_console(session_id(), 'session id');
 $title = "Arflaka: ";
 $uri = $_SERVER['REQUEST_URI'];
 
-$arflakaImg = "./Assets/Images/Arflaka.png";
-$flaImg = "./Assets/Images/fla.png";
-$profilImg = "./Assets/Images/profil.png";
+$arflakaImg = "/Assets/Images/Arflaka.png";
+$flaImg = "/Assets/Images/fla.png";
+$profilImg = "/Assets/Images/profil.png";
+$discordLogoImg = "/Assets/Images/discordLogo2.png";
 
 $header = "./Views/Components/header.php";
 $footer = "./Views/Components/footer.php";
@@ -18,13 +19,13 @@ $phpDirectory = "./Views/";
 $phpUserDirectory = "./Views/Users/";
 $phpAdminDirectory = "./Views/Users/";
 
-$accueil = "/index";
+$accueil = "/accueil";
 $hierachie = "/hierachie";
 $objectif = "/objectif";
 
-$cssDirectory = "./Assets/Css/";
+$cssDirectory = "/Assets/Css/";
 
-$jsDirectory = "./Assets/Scripts/";
+$jsDirectory = "/Assets/Scripts/";
 
 if (!isset($_SESSION['ID'])) {
     $_SESSION['ID'] = null;
@@ -40,6 +41,7 @@ if (!isset($_SESSION['ID'])) {
 
 if (!empty($_SESSION['ID'])) {
     if (file_exists('./Assets/Images/Avatars/' . $_SESSION['ID'] . '.png')) {
-        $profilImg = './Assets/Images/Avatars/' . $_SESSION['ID'] . '.png';
+        $profilImg = '/Assets/Images/Avatars/' . $_SESSION['ID'] . '.png';
+        debug_to_console($profilImg);
     }
 }

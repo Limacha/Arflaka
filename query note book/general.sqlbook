@@ -1,4 +1,8 @@
 -- SQLBook: Markup
+safe mod
+-- SQLBook: Code
+SET SQL_SAFE_UPDATES = 0;
+-- SQLBook: Markup
 creation d'une table
 -- SQLBook: Code
 CREATE TABLE medicament (
@@ -34,3 +38,8 @@ WHERE medecin.medNom = "ponchaut";
 delete un element
 -- SQLBook: Code
 DELETE FROM medecin WHERE medNom = "ponchaur";
+-- SQLBook: Markup
+tri par ordre decroisant
+-- SQLBook: Code
+SELECT * FROM medecin
+ORDER BY medId DESC;

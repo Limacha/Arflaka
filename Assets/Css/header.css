@@ -2,10 +2,12 @@ header {
     height: var(--headerHeight);
     width: 100%;
     background-color: grey;
+    /*
     border: black solid 2px;
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
+    */
     position: relative;
     z-index: 100;
 }
@@ -90,8 +92,17 @@ header {
 
 .Hbuttonim>img {
     height: 100%;
+    border-radius: 30%;
 }
 
+.Hbuttonim>a>img {
+    height: 100%;
+    border-radius: 30%;
+}
+
+.Hbuttonim>a>img:hover {
+    background-color: rgb(255, 136, 0);
+}
 
 #menu {
     height: 100%;

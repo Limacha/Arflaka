@@ -1,0 +1,56 @@
+button {
+    height: 50px;
+    width: 100px;
+}
+
+form {
+    width: auto;
+    height: auto;
+}
+
+.objectifs {
+    width: 150px;
+    height: 199px;
+    border: black solid 2px;
+    border-radius: 10px;
+    padding: 2px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.objectifs>div {
+    width: 100%;
+}
+
+.objectifs>img {
+    border-radius: 100%;
+    height: 75px;
+    width: 75px;
+}
+
+.objectifs>button {
+    background-color: rgb(190, 121, 255);
+
+    width: 75px;
+    height: 40px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#head {
+    width: 100%;
+}
+
+#objectif {
+    margin-left: 2px;
+}
+
+#listObj {
+    width: 100%;
+    /*height: 212.2px;
+    overflow-y: auto;*/
+}

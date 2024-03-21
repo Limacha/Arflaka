@@ -1,7 +1,7 @@
 <?php
 $template = $phpDirectory;
 $css = $cssDirectory;
-if ($uri === "/index" || $uri === "/") {
+if ($uri === "/accueil" || $uri === "/") {
     $title = $title . "Accueil";
     $css .= 'accueil.css';
     $template .= "accueil.php";
@@ -12,10 +12,20 @@ if ($uri === "/index" || $uri === "/") {
     $css = './teste/test.css';
     $template = "./teste/test.php";
     require_once("./Views/base.php");
+} elseif (str_starts_with($uri, "/verifPassword")) {
+    $title = $title . "verification du password";
+
+    if (isset($_POST['verifPasswordEnd'])) {
+        verifPasword($_POST['verifPasswordEnd']);
+    }
+
+    $css .= 'verifPassword.css';
+    $template .= "./global/verifPassword.php";
+    require_once("./Views/base.php");
 } else {
     //erreur 404
     $title = $title . "404";
     $css .= '404.css';
-    $template .= "404.php";
+    $template .= "./error/404.php";
     require_once("./Views/base.php");
 }

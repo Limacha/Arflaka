@@ -16,8 +16,8 @@
                     <p>modifier le profil</p>
                 </button>
             </form>
-            <form action="deleteProfil" method="POST">
-                <button id="deleteButton" name="deleteButton">
+            <form action="verifPassword" method="GET">
+                <button id="deleteButton" name="verifPassword" value="deleteProfil">
                     <p>suprimer le profil</p>
                 </button>
             </form>
