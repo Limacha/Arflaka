@@ -49,9 +49,8 @@ function editProfil()
 
 function deleteProfil()
 {
-    debug_to_console("good password");
     $pdo = connectionPDO('localhost', 'root', 'root', 'global');
-    $sql = 'DELETE FROM users WHERE userID = "' . $_SESSION['ID'] . '" AND userPassword = "' . $_POST['password'] . '";';
+    $sql = 'UPDATE global.users set userLife = 0 where userID = "' . $_SESSION['ID'] . '";';
     $result = executeSql($sql, $pdo);
     session_destroy();
     header("Location: profil");
@@ -114,9 +113,16 @@ function connection()
     $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $sql = 'SELECT userID from global.users where global.users.userPseudo = "' . $_POST['pseudo'] . '" AND global.users.userPassword = "' . $_POST['password'] . '" ;';
     $result = executeSql($sql, $pdo);
-    if (!empty($result[0]->userID)) {
-        modifSession($result[0]->userID);
-        header("Location: profil");
-        exit();
+
+    if (isset($result[0]->userID)) {
+        $sql = 'SELECT userLife from global.users where userID=' . $result[0]->userID . ';';
+        $verif = executeSql($sql, $pdo);
+        if (isset($verif[0]->userLife)) {
+            if ($verif[0]->userLife == 1) {
+                modifSession($result[0]->userID);
+                header("Location: profil");
+                exit();
+            }
+        }
     }
 }

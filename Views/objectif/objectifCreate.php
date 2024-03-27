@@ -13,9 +13,7 @@
 
                         </tr>
                         <tr>
-                            <th>
-                                <p>une description:</p>
-                            </th>
+                            <th>une description:</th>
                             <td>
                                 <textarea name="description" id="description" maxlength="255" placeholder="votre description en 255 characters max" required></textarea>
                             </td>
@@ -45,7 +43,10 @@
                         <tr>
                             <th>ouvert au proposition d'aide:</th>
                             <td>
-                                <input type="checkbox" id="helpOpen" name="helpOpen">
+                                <label class="container">
+                                    <input type="checkbox" id="helpOpen" name="helpOpen" checked>
+                                    <div class="checkmark"></div>
+                                </label>
                             </td>
                         </tr>
                         <tr>
@@ -61,8 +62,7 @@
                                 <p>Une photo pout illustrer</pfor=>
                             </th>
                             <td>
-                                <input type="file" name="illustration" id="illustration" accept="image/*"></input>
-
+                                <input type="file" name="illustration" id="illustration" accept="image/*">
                             </td>
                         </tr>
                     </tbody>

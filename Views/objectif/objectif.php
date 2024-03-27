@@ -17,7 +17,7 @@
                 <img src="<?= './Assets/Images/objectif/' .  $objectif->objId  . '.png' ?>" alt=" <?= 'objectif' . $objectif->objId ?>">
                 <div>
                     <p>Name: <?= $objectif->objName ?></p>
-                    <p>Statut: <?= $objectif->objStatut ?></p>
+                    <p>Statut: <?= substr($objectif->objStatut, 6) ?></p>
                     <p>Start: <?= date_format(date_create($objectif->objStartDate), "d-m-Y") ?></p>
                     <p>End: <?= date_format(date_create($objectif->objEndDate), "d-m-Y") ?></p>
                     <?php if ($objectif->objHelpOpen) : ?>

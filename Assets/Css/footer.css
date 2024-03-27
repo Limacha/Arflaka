@@ -1,7 +1,7 @@
 footer {
     height: var(--footerHeight);
     width: 100%;
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(70, 70, 70);
     /*
     border: black solid 2px;
     border-left: 0px;
@@ -41,6 +41,7 @@ footer {
 #discord:hover {
     width: auto;
     animation: hoverSocialButton 2s;
+    padding: 0 5px 0 5px;
 }
 
 #discord:hover>p {

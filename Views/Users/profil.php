@@ -5,6 +5,32 @@
     </div>
     <div id="login">
         <img src="<?= $profilImg ?>" alt="avatar<?= $_SESSION['ID'] ?>">
+        <table>
+            <tr>
+                <td>
+                    <p class="head">username</p>
+                    <p class="text"><?= $_SESSION['pseudo'] ?></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="head">email</p>
+                    <p class="text"><?= $_SESSION['email'] ?></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="head">phone</p>
+                    <p class="text"><?= (isset($_SESSION['phone'])) ? $_SESSION['phone'] : 'pas de numero' ?></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="head">description</p>
+                    <p class="text"><?= $_SESSION['description'] ?></p>
+                </td>
+            </tr>
+        </table>
         <div class="flex spaceBetween">
             <form action="profil" method="POST">
                 <button id="logoutButton" name="logoutButton">

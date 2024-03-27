@@ -42,6 +42,5 @@ if (!isset($_SESSION['ID'])) {
 if (!empty($_SESSION['ID'])) {
     if (file_exists('./Assets/Images/Avatars/' . $_SESSION['ID'] . '.png')) {
         $profilImg = '/Assets/Images/Avatars/' . $_SESSION['ID'] . '.png';
-        debug_to_console($profilImg);
     }
 }

@@ -3,36 +3,48 @@
     <form action="editProfil" method="POST" class="flex column centerV" enctype="multipart/form-data">
         <div>
             <div id="divFieldset" class="flex spaceBetween">
-                <fieldset>
-                    <legend>donnés personnel</legend>
-                    <div>
-                        <label for="email">votre email:</label>
-                        <input type="email" id="email" name="email" placeholder="email: 150 max" value="<?= $_SESSION['email'] ?>" required>
-                    </div>
-                    <div>
-                        <label for="phone">votre numero de telephone(belge):</label>
-                        <input type="tel" id="phone" name="phone" placeholder="00 32 4** ** ** **" value="<?= $_SESSION['phone'] ?>" pattern="[0]{2} [3]{1}[2]{1} [4]{1}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}">
-                    </div>
-                    <div>
-                        <label for="color">Votre couleur preferer</label>
-                        <input type="color" id="color" name="color" value="<?= $_SESSION['color'] ?>" required>
-                    </div>
-                </fieldset>
-                <fieldset class="flex column">
-                    <legend>Profil</legend>
-                    <div>
-                        <label for="pseudo">votre pseudo</label>
-                        <input type="text" id="pseudo" name="pseudo" minlength="5" maxlength="30" placeholder="pseudo: 5-30" value="<?= $_SESSION['pseudo'] ?>" required>
-                    </div>
-                    <div class="flex">
-                        <label for="description">Une petit description</label>
-                        <textarea name="description" id="description" cols="35" rows="8" maxlength="255" placeholder="votre description en 255 characters max"><?= $_SESSION['description'] ?></textarea>
-                    </div>
-                    <div>
-                        <label for="avatar">Une photo de profil</label>
-                        <input type="file" name="avatar" id="avatar" accept="image/*"></input>
-                    </div>
-                </fieldset>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class="title" colspan="2">donne peronnel</th>
+                        </tr>
+                        <tr>
+                            <th>votre email:</th>
+                            <td>
+                                <input type="email" id="email" name="email" placeholder="email: 150 max" value="<?= $_SESSION['email'] ?>" required>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>votre numero de telephone:</th>
+                            <td>
+                                <input type="tel" id="phone" name="phone" placeholder="00 32 4** ** ** **" value="<?= $_SESSION['phone'] ?>" pattern="[0]{2} [3]{1}[2]{1} [4]{1}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>votre couleur preferer:</th>
+                            <td>
+                                <input type="color" id="color" name="color" value="<?= $_SESSION['color'] ?>" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="title">profil</th>
+                        </tr>
+                        <tr>
+                            <th>votre description:</th>
+                            <td>
+                                <textarea name="description" id="description" cols="35" rows="8" maxlength="255" placeholder="votre description en 255 characters max"><?= $_SESSION['description'] ?></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>votre avatar:</th>
+                            <td>
+                                <input type="file" name="avatar" id="avatar" accept="image/*">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="flex spaceBetween">
                 <button id="editEnd" name="editEnd">modifier</button>
