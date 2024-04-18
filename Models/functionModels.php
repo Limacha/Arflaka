@@ -92,3 +92,11 @@ function insertInto($data, $base)
     $sql = 'INSERT INTO ' .  $base . ' (' . $cate . ') VALUES (' . $val . ');';
     executeSql($sql, $pdo);
 }
+
+function recupInfo($where, $base)
+{
+    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
+    $sql = 'SELECT * from global.' . $base . ' where ' . $where . ';';
+    $result = executeSql($sql, $pdo);
+    return $result;
+}

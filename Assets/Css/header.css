@@ -14,6 +14,7 @@ header {
 
 .Himg {
     height: 100%;
+    width: 100%;
 }
 
 
@@ -138,6 +139,15 @@ header {
     height: var(--headerHeight);
 }
 
+#logo img {
+    height: var(--headerHeight);
+}
+
+#logo a:hover {
+    background-color: rgb(255, 136, 0);
+    border-radius: 30%;
+}
+
 #info {
     min-width: 150px;
     max-height: var(--headerHeight);
@@ -155,6 +165,10 @@ header {
 
 #profil {
     height: var(--headerHeight);
+}
+
+#profil img {
+    width: var(--headerHeight);
 }
 
 @media (max-width: 800px) {

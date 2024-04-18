@@ -4,6 +4,72 @@ main {
     justify-content: center;
 }
 
+table {
+    width: 380px;
+}
+
+#body {
+    z-index: 3;
+    background-color: rgb(50, 50, 50);
+    opacity: 90%;
+    padding: 2%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+/*#region button envoyer */
+
+#objCreateEnd {
+    margin: 0px;
+    margin-top: 10px;
+
+    padding: 0.7em 1em;
+    padding-left: 0.7em;
+
+    font-family: inherit;
+    font-size: 20px;
+
+    background: rgb(35, 35, 35);
+    color: rgb(113, 113, 113);
+
+    border: none;
+    border-radius: 16px;
+
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+#objCreateEnd svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+#objCreateEnd span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+#objCreateEnd:hover .svg-wrapper {
+    animation: fly 0.6s ease-in-out infinite alternate;
+}
+
+#objCreateEnd:hover svg {
+    transform: translateX(2.1em) rotate(45deg) scale(1.1);
+}
+
+#objCreateEnd:hover span {
+    transform: translateX(5.2em);
+}
+
+#objCreateEnd:active {
+    transform: scale(0.95);
+}
+
+/* #endregion */
+
 /* #region checkbox */
 /* Hide the default checkbox */
 .container input {

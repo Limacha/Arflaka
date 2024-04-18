@@ -1,5 +1,5 @@
 <div id="body" class="flex centerV centerH fullHeight">
-    <div id="logout">
+    <div id="logout" class="centerV spaceAround">
         <a href="inscription"><button id="inscription" name="inscription">inscription</button></a>
         <a href="connection"><button id="connection" name="connection">connection</button></a>
     </div>
@@ -8,26 +8,26 @@
         <table>
             <tr>
                 <td>
-                    <p class="head">username</p>
-                    <p class="text"><?= $_SESSION['pseudo'] ?></p>
+                    <p class="tHead">username</p>
+                    <p class="tText"><?= $_SESSION['pseudo'] ?></p>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p class="head">email</p>
-                    <p class="text"><?= $_SESSION['email'] ?></p>
+                    <p class="tHead">email</p>
+                    <p class="tText"><?= $_SESSION['email'] ?></p>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p class="head">phone</p>
-                    <p class="text"><?= (isset($_SESSION['phone'])) ? $_SESSION['phone'] : 'pas de numero' ?></p>
+                    <p class="tHead">phone</p>
+                    <p class="tText"><?= (isset($_SESSION['phone'])) ? $_SESSION['phone'] : 'pas de numero' ?></p>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p class="head">description</p>
-                    <p class="text"><?= $_SESSION['description'] ?></p>
+                    <p class="tHead">description</p>
+                    <p class="tText"><?= (isset($_SESSION['description'])) ? $_SESSION['description'] : 'pas de description' ?></p>
                 </td>
             </tr>
         </table>

@@ -28,6 +28,6 @@
                 </div>
             </fieldset>
         </form>
-        <a href="inscription">inscription</a>
+        <a id="inscription" href="inscription">inscription</a>
     </div>
 </div>

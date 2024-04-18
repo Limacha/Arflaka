@@ -60,7 +60,7 @@ function inscritpion()
 {
     $pdo = connectionPDO('localhost', 'root', 'root', 'global');
 
-
+    debug_to_console($_POST, 'post');
     // stock de toute les donne
     $data = array(
         "userName" => $_POST['name'],

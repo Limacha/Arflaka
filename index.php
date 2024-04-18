@@ -8,6 +8,7 @@ require_once './Models/objectifModels.php';
 
 require_once 'constants.php';
 
+require_once './Controllers/usersController.php';
 require_once './Controllers/profilController.php';
 require_once './Controllers/administrationController.php';
 require_once './Controllers/hierachieController.php';

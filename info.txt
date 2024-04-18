@@ -1,0 +1,17 @@
+role:
+    roi
+    bot
+    president
+    ministre + attribut
+    developpeur discord
+    gestion discord
+    parlement
+    syndicat
+    corp electoral
+    peuple
+
+objectif:
+    fini
+    encour
+    preparation
+    broullion

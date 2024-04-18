@@ -13,7 +13,7 @@ if ($uri === "/profil") {
     if (!empty($_SESSION['ID'])) {
         change_css('--loginDisplay', 'block');
     } else {
-        change_css('--logoutDisplay', 'block');
+        change_css('--logoutDisplay', 'flex');
     }
 
     $template .= "profil.php";
@@ -21,7 +21,7 @@ if ($uri === "/profil") {
 } elseif ($uri === "/inscription") {
     $title = $title . "inscription";
 
-    if (isset($_POST['inscriEnd'])) {
+    if (isset($_POST['inscriptionEnd'])) {
         inscritpion();
     }
 

@@ -1,13 +1,11 @@
 <header id="header" class="flex centerV">
     <div id="logo" class="flex centerV">
-        <button class="Hbuttonim">
-            <?= ($_SESSION["ID"] == 11) ? "<a href='/administration/arflaka'>" : "" ?>
-            <img src="<?= $arflakaImg ?>" alt="name">
-            <?= ($_SESSION["ID"] == 11) ? "</a>" : "" ?>
-            <div id="menub" class="flex centerV column spaceAround">
-                <?php require './Views/Components/menu.php'; ?>
-            </div>
-        </button>
+        <?= ($_SESSION["ID"] == 11) ? "<a href='/administration/arflaka'>" : "" ?>
+        <img src="<?= $arflakaImg ?>" alt="name">
+        <?= ($_SESSION["ID"] == 11) ? "</a>" : "" ?>
+        <div id="menub" class="flex centerV column spaceAround">
+            <?php require './Views/Components/menu.php'; ?>
+        </div>
         <p> Arflaka</p>
     </div>
 
