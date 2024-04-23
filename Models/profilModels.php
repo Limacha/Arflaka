@@ -42,7 +42,7 @@ function editProfil()
             };
         }
         modifSession($_SESSION['ID']);
-        header("Location: profil");
+        header("Location: /profil");
         exit();
     }
 }
@@ -53,7 +53,7 @@ function deleteProfil()
     $sql = 'UPDATE global.users set userLife = 0 where userID = "' . $_SESSION['ID'] . '";';
     $result = executeSql($sql, $pdo);
     session_destroy();
-    header("Location: profil");
+    header("Location: /profil");
 }
 
 function inscritpion()
@@ -63,6 +63,7 @@ function inscritpion()
     debug_to_console($_POST, 'post');
     // stock de toute les donne
     $data = array(
+        "userCreationTime" => date("Y-m-d H:i:s"),
         "userName" => $_POST['name'],
         "userSurname" => $_POST['surname'],
         "userBirthday" => $_POST['date'],
@@ -102,9 +103,12 @@ function inscritpion()
             };
         }
         modifSession($result[0]->userID);
+        $message = "Bienvenu " . $data['userPseudo'] . "nous vous souhaiton le bienvenu.";
         // refresh de la page vers profil si sa a marcher
-        header("Location: profil");
+        header("Location: /profil");
         exit();
+    } else {
+        $message = "Le pseudo que vous voullez utiliser a déjà été pris.";
     }
 }
 
@@ -120,7 +124,7 @@ function connection()
         if (isset($verif[0]->userLife)) {
             if ($verif[0]->userLife == 1) {
                 modifSession($result[0]->userID);
-                header("Location: profil");
+                header("Location: /profil");
                 exit();
             }
         }

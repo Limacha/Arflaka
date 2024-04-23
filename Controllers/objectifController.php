@@ -21,7 +21,7 @@ if (str_starts_with($uri, "/objectif")) {
         $template .= "objectif/objectifCreate.php";
         //    $script = $jsDirectory . "accueil.js";
         require_once("./Views/base.php");
-    } else if (str_starts_with($uri, "/objectif/infos")) {
+    } else if (str_starts_with($uri, "/infos")) {
         $title = $title . "obj:" . $_GET["more"];
 
         $result = recupInfo('objId = "' . $_GET["more"] . '"', 'objectif');

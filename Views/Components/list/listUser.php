@@ -7,7 +7,7 @@
             <p class="flex centerV">fla: <span class="tText"><?= $user->userFla ?><img id="fla" src="<?= $flaImg ?>" alt="fla"></span></p>
             <p>arka: <span class="tText"><?= $user->userArka ?></span></p>
         </div>
-        <form class="flex centerV" action="/usersInfo" method="GET">
+        <form class="flex centerV" action="/users/info" method="GET">
             <button class="more" name="more" value="<?= $_GET["more"] = $user->userID ?>">
                 <span>More</span>
             </button>
