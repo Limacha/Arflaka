@@ -32,7 +32,7 @@
             </tr>
         </table>
         <div class="flex spaceBetween">
-            <form action="/profil" method="POST">
+            <form action="" method="POST">
                 <button id="logoutButton" name="logoutButton">
                     <p>deconnection</p>
                 </button>

@@ -1,6 +1,6 @@
 <div id="body" class="flex column centerV">
     <h1>modification des données</h1>
-    <form id="editProfForm" action="/profil/editProfil" method="POST" class="flex column centerV" enctype="multipart/form-data">
+    <form id="editProfForm" action="" method="POST" class="flex column centerV" enctype="multipart/form-data">
         <div id="divDivTabel">
             <div id="divTabel" class="flex spaceAround">
                 <table>

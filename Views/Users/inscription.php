@@ -1,6 +1,6 @@
 <div id="body" class="flex column centerV">
     <h1>Inscription</h1>
-    <form action="/profil/inscription" method="POST" class="flex column centerV" enctype="multipart/form-data">
+    <form action="" method="POST" class="flex column centerV" enctype="multipart/form-data">
         <div id="divDivTabel">
             <div id="divTabel" class="flex spaceAround">
                 <table>

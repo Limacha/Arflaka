@@ -48,5 +48,5 @@
 <script>
     const icon = document.getElementById("icon");
     icon.style.width = getComputedStyle(icon).getPropertyValue('height');
-    icon.style.height = getComputedStyle(icon).getPropertyValue('height');
+    icon.style.height = icon.style.width;
 </script>

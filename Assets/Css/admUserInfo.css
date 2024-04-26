@@ -1,0 +1,165 @@
+main {
+    margin: auto 0 auto 0;
+}
+
+table {
+    border-radius: 5%;
+    max-width: 100%;
+    height: auto;
+    margin: 5px 0 5px 0;
+}
+
+table td p {
+    margin-left: 2px;
+}
+
+.modifButton {
+    width: 70px;
+    height: 35px;
+}
+
+#div {
+    max-width: min(calc(475px - 14%), calc(100vw - 14%));
+    margin: 0 7%;
+}
+
+#avatar {
+    height: 75px;
+    width: 75px;
+}
+
+#div table {
+    height: 75px;
+    width: auto;
+}
+
+#div table .tHead {
+    font-size: 18px;
+}
+
+#fla {
+    height: 20px;
+    width: 20px;
+}
+
+fieldset>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 140px;
+    height: 50px;
+}
+
+#info {
+    margin: 0px;
+}
+
+#color {
+    width: 150px;
+    height: 25px;
+    border-radius: 15px;
+}
+
+#selectRole,
+#flaEdit,
+#arkaEdit {
+    display: none;
+    width: 125px;
+}
+
+/* #region edit button */
+.editBtn {
+    width: 27px;
+    height: 27px;
+
+    margin-left: 15px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: rgb(93, 93, 116);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.367);
+
+    cursor: pointer;
+}
+
+.editBtn:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.688);
+    animation: none;
+}
+
+.editBtn svg {
+    height: 12px;
+    fill: white;
+    z-index: 3;
+    transition-duration: 0.8s;
+}
+
+
+.editBtn:hover svg {
+    transition-duration: 0.8s;
+    transform: rotate(330deg);
+}
+
+/*#endregion*/
+
+/* #region edit button */
+.saveBtn {
+    width: 27px;
+    height: 27px;
+
+    margin-left: 15px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: rgb(93, 93, 116);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.367);
+
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.688);
+    animation: none;
+
+    transition: all 0.7s;
+}
+
+.saveBtn>div:after {
+    content: "";
+    position: absolute;
+    display: block;
+
+    left: 0.61em;
+    top: 0.43em;
+
+    width: 0.25em;
+    height: 0.5em;
+
+    border: solid rgb(255, 255, 255);
+    border-width: 0 0.15em 0.15em 0;
+
+    transform: rotate(45deg);
+
+    transition-duration: 0.8s;
+}
+
+.saveBtn:hover>div:after {
+    transition-duration: 0.8s;
+    transform: rotate(400deg);
+}
+
+/*#endregion*/

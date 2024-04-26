@@ -22,6 +22,12 @@ if ($uri === "/accueil" || $uri === "/") {
     $css .= 'verifPassword.css';
     $template .= "./global/verifPassword.php";
     require_once("./Views/base.php");
+} else if ($uri == "/403") {
+    //erreur 403
+    $title = $title . "403";
+    $css .= '403.css';
+    $template .= "./error/403.php";
+    require_once("./Views/base.php");
 } else {
     //erreur 404
     $title = $title . "404";

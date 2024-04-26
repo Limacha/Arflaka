@@ -19,9 +19,6 @@
     <link rel="stylesheet" href="<?= $css ?>">
 </head>
 
-<script src="<?= $script ?>"></script>
-
-
 <body>
     <?php include  $header  ?>
 
@@ -30,6 +27,8 @@
     </main>
 
     <?php include $footer ?>
+    <script src="<?= $jsDirectory ?>function.js"></script>
+    <script src="<?= $script ?>"></script>
 </body>
 
 </html>

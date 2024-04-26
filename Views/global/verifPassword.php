@@ -1,6 +1,6 @@
 <div id="body" class="flex column centerV centerH fullHeight">
     <h1>Merci de confirmer votre mot de passe!</h1>
-    <form action="verifPassword" method="POST" class="flex column centerV">
+    <form action="" method="POST" class="flex column centerV">
         <div class="formGroup field">
             <input type="password" class="formField" id="password" name="password" placeholder="password" required="" max="30" min="6">
             <label for="password" class="formLabel">password</label>

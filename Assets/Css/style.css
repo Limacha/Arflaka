@@ -66,11 +66,6 @@ h6 {
     color: var(--textColor);
 }
 
-/*
-form {
-    width: 35%;
-}
-*/
 fieldset {
     display: flex;
     border-color: blue;
@@ -78,6 +73,7 @@ fieldset {
     justify-content: space-around;
 }
 
+/* #region input */
 input {
     border-radius: 15px;
     height: 25px;
@@ -141,6 +137,8 @@ input[type=checkbox] {
     width: 25px;
 }
 
+/* #endregion input */
+
 select {
     width: 150px;
     height: 25px;
@@ -152,6 +150,17 @@ textarea {
     border-radius: 10px;
     padding: 2px;
 }
+
+/* #region color */
+.red {
+    color: red;
+}
+
+.black {
+    color: black;
+}
+
+/* #endregion */
 
 .tHead {
     font-weight: 500;

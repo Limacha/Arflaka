@@ -100,3 +100,11 @@ function recupInfo($where, $base)
     $result = executeSql($sql, $pdo);
     return $result;
 }
+
+function recupListRole()
+{
+    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
+    $sql = 'SELECT * from global.roles;';
+    $result = executeSql($sql, $pdo);
+    return $result;
+}

@@ -1,7 +1,7 @@
 <div id="connect" class="flex centerV centerH">
     <div id="case" class="flex column centerV spaceAround">
         <h1>Se Connecter</h1>
-        <form action="/profil/connection" method="POST">
+        <form action="" method="POST">
             <fieldset class="flex column centerV">
                 <div class="formGroup field">
                     <input type="text" class="formField" id="pseudo" name="pseudo" placeholder="pseudo" required="" max="20" min="3">
