@@ -1,7 +1,6 @@
 <?php
-function editProfil()
+function editProfil($pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $data = array(
         "userEmail" => $_POST['email'],
         "userPhone" => $_POST['phone'],
@@ -41,25 +40,22 @@ function editProfil()
                 }
             };
         }
-        modifSession($_SESSION['ID']);
+        modifSession($_SESSION['ID'], $pdo);
         header("Location: /profil");
         exit();
     }
 }
 
-function deleteProfil()
+function deleteProfil($pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $sql = 'UPDATE global.users set userLife = 0 where userID = "' . $_SESSION['ID'] . '";';
     $result = executeSql($sql, $pdo);
     session_destroy();
     header("Location: /profil");
 }
 
-function inscritpion()
+function inscritpion($pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
-
     debug_to_console($_POST, 'post');
     // stock de toute les donne
     $data = array(
@@ -83,7 +79,7 @@ function inscritpion()
 
     // verification si il existe deja et il n'est pas deja connecter
     if ($result[0]->verif == 0 && empty($_SESSION['userID'])) {
-        insertInto($data, 'users');
+        insertInto($data, 'users', $pdo);
 
         $sql = 'SELECT userID from global.users where global.users.userPseudo = "' . $data['userPseudo'] . '" AND global.users.userPassword = "' . $data['userPassword'] . '" ;';
         $result = executeSql($sql, $pdo);
@@ -102,7 +98,7 @@ function inscritpion()
                 }
             };
         }
-        modifSession($result[0]->userID);
+        modifSession($result[0]->userID, $pdo);
         $message = "Bienvenu " . $data['userPseudo'] . "nous vous souhaiton le bienvenu.";
         // refresh de la page vers profil si sa a marcher
         header("Location: /profil");
@@ -112,9 +108,8 @@ function inscritpion()
     }
 }
 
-function connection()
+function connection($pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $sql = 'SELECT userID from global.users where global.users.userPseudo = "' . $_POST['pseudo'] . '" AND global.users.userPassword = "' . $_POST['password'] . '" ;';
     $result = executeSql($sql, $pdo);
 
@@ -123,7 +118,7 @@ function connection()
         $verif = executeSql($sql, $pdo);
         if (isset($verif[0]->userLife)) {
             if ($verif[0]->userLife == 1) {
-                modifSession($result[0]->userID);
+                modifSession($result[0]->userID, $pdo);
                 header("Location: /profil");
                 exit();
             }

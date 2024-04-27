@@ -15,7 +15,8 @@
                             <p class="tText" id="textRole"><?= $data['role'] ?></p>
                             <select name="selectRole" id="selectRole" onchange="selectChange()">
                                 <?php foreach ($roles as $role) : ?>
-                                    <option id="<?= $role->roleName ?>" value="<?= $role->roleName ?>" class=<?= ($data['role'] == $role->roleName) ? "red" . " selected" : "black" ?>><?= $role->roleName ?></option>
+                                    <!-- class= ?= ($data['role'] == $role->roleName) ? "red" . " selected" : "black" ?> -->
+                                    <option id="<?= $role->roleName ?>" value="<?= $role->roleName ?>" <?= ($data['role'] == $role->roleName) ? "selected" : "" ?>><?= $role->roleName ?></option>
                                 <?php endforeach ?>
                             </select>
                         </td>

@@ -6,7 +6,7 @@ if (str_starts_with($uri, "/users")) {
     if (str_starts_with($uri, "/info")) {
         $title = $title . "User" . $_GET["more"];
 
-        $result = recupInfo('userID = "' . $_GET["more"] . '"', 'users');
+        $result = recupInfo('userID = "' . $_GET["more"] . '"', 'users', $pdo);
         if (isset($result)) {
             $data = array(
                 'ID' => $result[0]->userID,

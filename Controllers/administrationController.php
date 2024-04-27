@@ -6,8 +6,8 @@ if (str_starts_with($uri, "/administration")) {
     if ($_SESSION["ID"] == 11) {
         if ($uri === "/arflaka") {
             $title = $title . "arflaka";
-            $users = listeUser();
-            $objectifs = listeObjectif();
+            $users = listeUser($pdo);
+            $objectifs = listeObjectif($pdo);
 
             $css .= 'arflaka.css';
             $template .= "Administration/arflaka.php";
@@ -16,7 +16,7 @@ if (str_starts_with($uri, "/administration")) {
         } else if (str_starts_with($uri, "/users/info")) {
             $title = $title . "admUserInfo" . $_GET["more"];
 
-            $result = recupInfo('userID = "' . $_GET["more"] . '"', 'users');
+            $result = recupInfo('userID = "' . $_GET["more"] . '"', 'users', $pdo);
             if (isset($result)) {
                 $data = array(
                     'ID' => $result[0]->userID,
@@ -33,7 +33,7 @@ if (str_starts_with($uri, "/administration")) {
                     }
                 }
             }
-            $roles = recupListRole();
+            $roles = recupListRole($pdo);
             $css .= 'admUserInfo.css';
             $template .= "Administration/admUserInfo.php";
             $script = $jsDirectory . "admUserInfo.js";

@@ -28,6 +28,7 @@
 
     <?php include $footer ?>
     <script src="<?= $jsDirectory ?>function.js"></script>
+    <script src="/Ajax/ajaxFunction.js"></script>
     <script src="<?= $script ?>"></script>
 </body>
 

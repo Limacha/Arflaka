@@ -7,7 +7,7 @@ if (str_starts_with($uri, "/objectif")) {
         $title = $title . "objectifCreate";
 
         if (isset($_POST['objCreateEnd'])) {
-            createObjectif();
+            createObjectif($pdo);
         }
 
         $startTime = new DateTime();
@@ -24,7 +24,7 @@ if (str_starts_with($uri, "/objectif")) {
     } else if (str_starts_with($uri, "/infos")) {
         $title = $title . "obj:" . $_GET["more"];
 
-        $result = recupInfo('objId = "' . $_GET["more"] . '"', 'objectif');
+        $result = recupInfo('objId = "' . $_GET["more"] . '"', 'objectif', $pdo);
         if (isset($result)) {
             $data = array(
                 'ID' => $result[0]->objId,
@@ -50,7 +50,7 @@ if (str_starts_with($uri, "/objectif")) {
         require_once("./Views/base.php");
     } else {
         $title = $title . "objectif";
-        $objectifs = listeObjectif();
+        $objectifs = listeObjectif($pdo);
         $css .= 'objectif.css';
         $template .= "objectif/objectif.php";
         //    $script = $jsDirectory . "accueil.js";

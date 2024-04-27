@@ -16,7 +16,7 @@ if ($uri === "/accueil" || $uri === "/") {
     $title = $title . "verification du password";
 
     if (isset($_POST['verifPasswordEnd'])) {
-        verifPasword($_POST['verifPasswordEnd']);
+        verifPasword($_POST['verifPasswordEnd'], $pdo);
     }
 
     $css .= 'verifPassword.css';

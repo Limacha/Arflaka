@@ -30,9 +30,8 @@ function executeSql($sql, $pdo)
     }
 };
 
-function modifSession($id)
+function modifSession($id, $pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $sql = 'SELECT * from global.users where global.users.userID = ' . $id . ' ;';
     $result = executeSql($sql, $pdo);
     $_SESSION['ID'] = $result[0]->userID;
@@ -46,9 +45,8 @@ function modifSession($id)
     $_SESSION['arka'] =  $result[0]->userArka;
 }
 
-function verifPasword($function)
+function verifPasword($function, $pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $sql = 'SELECT userPassword from global.users where global.users.userId = "' . $_SESSION['ID'] . '" ;';
     $result = executeSql($sql, $pdo);
     if (!empty($result[0]->userPassword)) {
@@ -65,13 +63,16 @@ function verifPasword($function)
     }
 }
 
-function insertInto($data, $base)
+function insertInto($data, $base, $pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
-
     $cate = "";
     $val = '"';
     $i = 0;
+    /*
+    $data = array(
+        "$key" => $value
+    );
+    */
     // creation de la commande sql
     foreach ($data as $key => $value) {
         $i++;
@@ -93,17 +94,15 @@ function insertInto($data, $base)
     executeSql($sql, $pdo);
 }
 
-function recupInfo($where, $base)
+function recupInfo($where, $base, $pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $sql = 'SELECT * from global.' . $base . ' where ' . $where . ';';
     $result = executeSql($sql, $pdo);
     return $result;
 }
 
-function recupListRole()
+function recupListRole($pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
     $sql = 'SELECT * from global.roles;';
     $result = executeSql($sql, $pdo);
     return $result;

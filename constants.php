@@ -4,6 +4,8 @@ session_start();
 debug_to_console($_SESSION, 'session aray');
 debug_to_console(session_id(), 'session id');
 
+$pdo = connectionPDO('localhost', 'root', 'root', 'global');
+
 $title = "Arflaka: ";
 $uri = $_SERVER['REQUEST_URI'];
 

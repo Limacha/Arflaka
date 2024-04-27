@@ -24,7 +24,7 @@ if (str_starts_with($uri, "/profil")) {
         $title = $title . "inscription";
 
         if (isset($_POST['inscriptionEnd'])) {
-            inscritpion();
+            inscritpion($pdo);
         }
 
         $css .= 'inscription.css';
@@ -34,7 +34,7 @@ if (str_starts_with($uri, "/profil")) {
         $title = $title . "connection";
 
         if (isset($_POST['connectEnd']) && empty($_SESSION['ID'])) {
-            connection();
+            connection($pdo);
         }
 
         $css .= 'connection.css';
@@ -44,7 +44,7 @@ if (str_starts_with($uri, "/profil")) {
         $title = $title . "profil editing";
 
         if (isset($_POST['editEnd'])) {
-            editProfil();
+            editProfil($pdo);
         }
         $css .= "editProfil.css";
         $template .= "editProfil.php";

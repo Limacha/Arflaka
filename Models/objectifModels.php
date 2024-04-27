@@ -1,17 +1,13 @@
 <?php
 
-function listeObjectif()
+function listeObjectif($pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
-
     $sql = 'SELECT * from global.objectif order by objName;';
     return executeSql($sql, $pdo);
 }
 
-function createObjectif()
+function createObjectif($pdo)
 {
-    $pdo = connectionPDO('localhost', 'root', 'root', 'global');
-
     // stock de toute les donne
     $data = array(
         "objCreationTime" => date("Y-m-d H:i:s"),
@@ -30,7 +26,7 @@ function createObjectif()
 
     // verification si il existe deja
     if ($result[0]->verif == 0) {
-        insertInto($data, 'objectif');
+        insertInto($data, 'objectif', $pdo);
 
         $sql = 'SELECT objId from global.objectif where global.objectif.objName = "' . $data['objName'] . '" ;';
         $result = executeSql($sql, $pdo);
