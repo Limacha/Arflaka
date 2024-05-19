@@ -171,7 +171,7 @@ header {
     width: var(--headerHeight);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
     header {
         justify-content: space-between;
     }

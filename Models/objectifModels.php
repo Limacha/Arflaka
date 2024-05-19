@@ -46,7 +46,7 @@ function createObjectif($pdo)
                 }
             };
         }
-        // refresh de la page vers profil si sa a marcher
+        // refresh de la page vers obj si sa a marcher
         header("Location: objectif");
         exit();
     }

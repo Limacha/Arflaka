@@ -52,7 +52,7 @@ function verifPasword($function, $pdo)
     if (!empty($result[0]->userPassword)) {
         if ($result[0]->userPassword == $_POST["password"]) {
             if (function_exists($function)) {
-                $function();
+                $function($pdo);
             } else {
                 header("Location: " . $function);
             }
@@ -96,14 +96,10 @@ function insertInto($data, $base, $pdo)
 
 function recupInfo($where, $base, $pdo)
 {
-    $sql = 'SELECT * from global.' . $base . ' where ' . $where . ';';
-    $result = executeSql($sql, $pdo);
-    return $result;
-}
-
-function recupListRole($pdo)
-{
-    $sql = 'SELECT * from global.roles;';
+    if ($where != '') {
+        $where = 'where ' . $where;
+    }
+    $sql = 'SELECT * from global.' . $base . ' ' . $where . ';';
     $result = executeSql($sql, $pdo);
     return $result;
 }

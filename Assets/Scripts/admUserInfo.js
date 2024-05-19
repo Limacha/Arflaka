@@ -43,6 +43,8 @@ function edit(id) {
         var textFla = document.getElementById("textFla");
         var flaEdit = document.getElementById("flaEdit");
 
+        flaEdit.value = textFla.innerHTML;
+
         // changer d'element afficher
         textFla.style.display = "none";
         flaEdit.style.display = "block";
@@ -50,6 +52,8 @@ function edit(id) {
     } else if (id.substring(7) == "Arka") {
         var textArka = document.getElementById("textArka");
         var arkaEdit = document.getElementById("arkaEdit");
+
+        arkaEdit.value = textArka.innerHTML;
 
         // changer d'element afficher
         textArka.style.display = "none";
@@ -69,32 +73,44 @@ function save(id) {
         var textRole = document.getElementById("textRole")
         var selectRole = document.getElementById("selectRole")
 
-        // changement de l'element afficher
-        textRole.style.display = "block";
-        selectRole.style.display = "none";
-
-
         if (selectRole.value != textRole.innerHTML) {
             var alt = document.getElementById('avatar').alt;
             // changer la valeur dans la bdd
             ajaxPost(textRole, "/Ajax/ajaxAdmUserInfo.php", "userRole=" + selectRole.value + "&&id=" + alt);
         }
 
+        // changement de l'element afficher
+        textRole.style.display = "block";
+        selectRole.style.display = "none";
 
     } else if (id.substring(7) == "Fla") {
         var textFla = document.getElementById("textFla");
         var flaEdit = document.getElementById("flaEdit");
 
+        if (flaEdit.value != textFla.innerHTML) {
+            var alt = document.getElementById('avatar').alt;
+            // changer la valeur dans la bdd
+            ajaxPost(textFla, "/Ajax/ajaxAdmUserInfo.php", "userFla=" + flaEdit.value + "&&id=" + alt);
+        }
+
         // changement de l'element afficher
         textFla.style.display = "block";
         flaEdit.style.display = "none";
+
     } else if (id.substring(7) == "Arka") {
         var textArka = document.getElementById("textArka");
         var arkaEdit = document.getElementById("arkaEdit");
 
+        if (arkaEdit.value != textArka.innerHTML) {
+            var alt = document.getElementById('avatar').alt;
+            // changer la valeur dans la bdd
+            ajaxPost(textArka, "/Ajax/ajaxAdmUserInfo.php", "userArka=" + arkaEdit.value + "&&id=" + alt);
+        }
+
         // changement de l'element afficher
         textArka.style.display = "block";
         arkaEdit.style.display = "none";
+
     }
     saveBtn.style.display = "none";
     editBtn.style.display = "flex";

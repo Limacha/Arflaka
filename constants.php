@@ -3,6 +3,8 @@ session_start();
 
 debug_to_console($_SESSION, 'session aray');
 debug_to_console(session_id(), 'session id');
+debug_to_console($_POST, 'post');
+debug_to_console($_GET, 'get');
 
 $pdo = connectionPDO('localhost', 'root', 'root', 'global');
 

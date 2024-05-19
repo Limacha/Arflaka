@@ -9,4 +9,10 @@ $sql = 'UPDATE users set ' . key($_POST) . '="' . reset($_POST) . '" WHERE globa
 executeSql($sql, $pdo);
 $result = recupInfo("userID=" . substr($_POST['id'], 6), $base, $pdo);
 
-echo ($result[0]->userRole);
+if ("userRole" == key($_POST)) {
+    echo ($result[0]->userRole);
+} else if ("userFla" == key($_POST)) {
+    echo ($result[0]->userFla);
+} else if ("userArka" == key($_POST)) {
+    echo ($result[0]->userArka);
+}

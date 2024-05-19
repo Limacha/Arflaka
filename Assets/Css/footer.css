@@ -40,13 +40,18 @@ footer {
 
 #discord:hover {
     width: auto;
-    animation: hoverSocialButton 2s;
+    animation: hoverSocialButton 3s;
     padding: 0 5px 0 5px;
 }
 
 #discord:hover>p {
     display: block;
     padding: 4px;
+}
+
+#discord:hover>img {
+    transition-duration: 1s;
+    transform: rotate(-360deg);
 }
 
 #discord>img {

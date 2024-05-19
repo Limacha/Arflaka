@@ -1,6 +1,7 @@
 main {
     height: auto;
     margin: 15px 0 15px 0;
+    min-height: calc(100vh - calc(calc(var(--footerHeight) + var(--headerHeight)) + 30px));
 }
 
 .users {
@@ -22,6 +23,11 @@ main {
 
 .users>div {
     width: 100%;
+}
+
+.Fmore {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #arflaka {
@@ -61,7 +67,7 @@ main {
     overflow-y: auto;
 }
 
-/*region delete cross*/
+/* #region delete cross*/
 .backCrossDel {
     border-radius: 16px;
     border: 1px solid #1a1a1a;
@@ -122,4 +128,21 @@ main {
 
 #divID>img {
     margin-left: 35px;
+}
+
+#listRole {
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+}
+
+.roles {
+    width: 120px;
+    height: 170px;
+    border: black solid 2px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 13px;
 }

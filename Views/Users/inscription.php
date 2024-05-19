@@ -6,10 +6,10 @@
                 <table>
                     <tbody>
                         <tr>
-                            <th class="title" colspan="2">donne peronnel</th>
+                            <th class="title" colspan="2">donnée personnel</th>
                         </tr>
                         <tr>
-                            <th>votre pseudo:</th>
+                            <th>votre prénom:</th>
                             <td>
                                 <input type="text" id="name" name="name" maxlength="30" placeholder="prenom: 30" required>
                             </td>

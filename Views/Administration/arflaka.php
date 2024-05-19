@@ -20,3 +20,12 @@
     <button>Edit</button>
 </div>
 <br>
+<div id="role" class="flex column centerV">
+    <h1>Roles</h1>
+    <p>Liste de tout les roles</p>
+    <div id="listRole" class="flex wrap centerH">
+        <?php require_once("./Views/Components/list/listRole.php"); ?>
+    </div>
+    <br>
+    <button>Edit</button>
+</div>

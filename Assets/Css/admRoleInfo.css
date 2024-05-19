@@ -1,0 +1,132 @@
+main {
+    margin: auto 0 auto 0;
+}
+
+form {
+    width: 50%;
+    margin: 0 7%;
+}
+
+.modifButton {
+    width: 70px;
+    height: 35px;
+}
+
+#div {
+    width: 50%;
+    margin: 0 7%;
+}
+
+#div>div {
+    margin-bottom: 30px;
+}
+
+button {
+    width: 140px;
+    height: 50px;
+}
+
+#body>h1 {
+    margin: 50px 0 50px;
+}
+
+/* #region edit button */
+.editBtn {
+    width: 27px;
+    height: 27px;
+
+    margin-left: 15px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: rgb(93, 93, 116);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.367);
+
+    cursor: pointer;
+}
+
+.editBtn:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.688);
+    animation: none;
+}
+
+.editBtn svg {
+    height: 12px;
+    fill: white;
+    z-index: 3;
+    transition-duration: 0.8s;
+}
+
+
+.editBtn:hover svg {
+    transition-duration: 0.8s;
+    transform: rotate(330deg);
+}
+
+/*#endregion*/
+
+/* #region save */
+
+#saveDiv {
+    width: 50%;
+    height: 50px;
+    padding: 12.5px;
+
+    position: fixed;
+    bottom: calc(var(--footerHeight) + 25px);
+
+    display: none;
+
+    border-radius: 25px;
+    border: 1px solid black;
+
+    background-color: rgb(25, 25, 25);
+    color: var(--textColor);
+}
+
+.resetBtn {
+    width: 125px;
+    height: 30px;
+
+    margin-left: 15px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(154, 57, 154);
+
+    cursor: pointer;
+}
+
+.saveBtn {
+    width: 125px;
+    height: 30px;
+
+    margin-left: 15px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: rgb(43, 185, 30);
+
+    color: rgb(8, 94, 0);
+
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    animation: none;
+
+    background-color: rgb(21, 255, 0);
+
+    transition-duration: 0.5s;
+}
+
+/* #endregion */
