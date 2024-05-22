@@ -304,6 +304,7 @@ button:hover {
 /*#endregion*/
 
 /* #region switch */
+
 .switch {
     /* switch */
     --switch-width: 46px;
@@ -447,3 +448,7 @@ button:hover {
 }
 
 /* #endregion */
+
+#messageError {
+    margin-top: 10px;
+}

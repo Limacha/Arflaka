@@ -97,4 +97,5 @@
     </form>
 
     <a id="connection" href="connection">connection</a>
+    <p id="messageError"><?= (isset($_POST['message'])) ? $_POST['message'] : "" ?></p>
 </div>

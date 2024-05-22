@@ -50,4 +50,5 @@ function createObjectif($pdo)
         header("Location: objectif");
         exit();
     }
+    $_POST['message'] = "deja cree desoler et courage pour trouver un nom.";
 }

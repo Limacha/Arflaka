@@ -17,9 +17,10 @@
         <p class="flex centerV">fla: <?= $_SESSION['fla'] ?> <img id="fla" src="<?= $flaImg ?>" alt=""></p>
         <p>Arka: <?= $_SESSION['arka'] ?> <img src="" alt=""></p>
     </div>
-    <div id="profil">
+    <div id="profilDiv" class="flex column centerV">
         <a href="/profil">
             <img class="Himg" src="<?= $profilImg ?>" alt="">
         </a>
+        <p><?= $_SESSION['pseudo'] ?></p>
     </div>
 </header>

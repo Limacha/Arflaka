@@ -45,6 +45,7 @@ function editProfil($pdo)
         header("Location: /profil");
         exit();
     }
+    $_POST['message'] = "qui es-tu nous ne te connesons pas?";
 }
 
 function deleteProfil($pdo)
@@ -100,12 +101,12 @@ function inscritpion($pdo)
             };
         }
         modifSession($result[0]->userID, $pdo);
-        $message = "Bienvenu " . $data['userPseudo'] . "nous vous souhaiton le bienvenu.";
+        $_POST['message'] = "Bienvenu " . $data['userPseudo'] . "nous vous souhaiton le bienvenu.";
         // refresh de la page vers profil si sa a marcher
         header("Location: /profil");
         exit();
     } else {
-        $message = "Le pseudo que vous voullez utiliser a déjà été pris.";
+        $_POST['message'] = "Le pseudo que vous voullez utiliser a déjà été pris.";
     }
 }
 
@@ -124,5 +125,7 @@ function connection($pdo)
                 exit();
             }
         }
+        $_POST['message'] = "cette utilisateur nous a quitte pais a son ame.";
     }
+    $_POST['message'] = "pseudo ou password incorrect";
 }

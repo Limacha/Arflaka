@@ -1,2 +1,0 @@
-ajaxAdmUserInfo.php
-    select un element class avec addition de string

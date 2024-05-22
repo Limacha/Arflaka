@@ -1,4 +1,4 @@
-<div id="connect" class="flex centerV centerH">
+<div id="connect" class="flex centerV column centerH">
     <div id="case" class="flex column centerV spaceAround">
         <h1>Se Connecter</h1>
         <form action="" method="POST">
@@ -30,4 +30,6 @@
         </form>
         <a id="inscription" href="inscription">inscription</a>
     </div>
+
+    <p id="messageError"><?= (isset($_POST['message'])) ? $_POST['message'] : "" ?></p>
 </div>

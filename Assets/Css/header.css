@@ -163,12 +163,18 @@ header {
     height: 18px;
 }
 
-#profil {
+#profilDiv {
     height: var(--headerHeight);
+    margin-right: 5px;
 }
 
-#profil img {
-    width: var(--headerHeight);
+#profilDiv img {
+    width: calc(var(--headerHeight) - 16px);
+    height: calc(var(--headerHeight) - 16px);
+}
+
+#profilDiv p {
+    font-size: 15px;
 }
 
 @media (max-width: 950px) {
