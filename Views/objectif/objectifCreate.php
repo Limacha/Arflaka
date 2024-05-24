@@ -65,6 +65,15 @@
                                 <input type="file" name="illustration" id="illustration" accept="image/*">
                             </td>
                         </tr>
+                        <tr>
+                            <th>rester anonyme:</th>
+                            <td>
+                                <label class="container">
+                                    <input type="checkbox" id="anonyme" name="anonyme">
+                                    <div class="checkmark"></div>
+                                </label>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

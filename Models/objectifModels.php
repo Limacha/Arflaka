@@ -3,7 +3,7 @@
 function listeObjectif($pdo)
 {
     $sql = 'SELECT * from global.objectif order by objName;';
-    return executeSql($sql, $pdo);
+    return executeSql($sql, $pdo, []);
 }
 
 function createObjectif($pdo)
@@ -11,25 +11,26 @@ function createObjectif($pdo)
     // stock de toute les donne
     $data = array(
         "objCreationTime" => date("Y-m-d H:i:s"),
-        "objName" => $_POST['name'],
-        "objDescription" => $_POST['description'],
+        "objName" => htmlentities($_POST['name']),
+        "objDescription" => htmlentities($_POST['description']),
         "objStatut" => $_POST['statut'],
         "objStartDate" => $_POST['startTime'],
         "objEndDate" => $_POST['endTime'],
         "objHelpOpen" => isset($_POST['helpOpen']),
         "objHelpLimit" => $_POST['helpLimit'],
-        "objCreator" => $_SESSION['ID']
+        "objCreator" => $_SESSION['ID'],
+        "objAnonyme" => $_POST['anonyme']
     );
 
-    $sql = 'SELECT EXISTS( SELECT * FROM global.objectif WHERE global.objectif.objName = "' . $data['objName'] . '" ) as verif;';
-    $result = executeSql($sql, $pdo);
+    $sql = 'SELECT EXISTS( SELECT * FROM global.objectif WHERE global.objectif.objName = :objName ) as verif;';
+    $result = executeSql($sql, $pdo, $data);
 
     // verification si il existe deja
     if ($result[0]->verif == 0) {
         insertInto($data, 'objectif', $pdo);
 
-        $sql = 'SELECT objId from global.objectif where global.objectif.objName = "' . $data['objName'] . '" ;';
-        $result = executeSql($sql, $pdo);
+        $sql = 'SELECT objId from global.objectif where global.objectif.objName = :objName ;';
+        $result = executeSql($sql, $pdo, $data);
         debug_to_console($result);
 
         //creation de l'image avatar

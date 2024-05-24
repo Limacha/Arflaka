@@ -2,13 +2,14 @@
 function editProfil($pdo)
 {
     $data = array(
+        "userID" => $_SESSION['ID'],
         "userEmail" => $_POST['email'],
         "userPhone" => $_POST['phone'],
         "userColor" => $_POST['color'],
-        "userDescription" => $_POST['description']
+        "userDescription" => htmlentities($_POST['description'])
     );
-    $sql = 'SELECT count(*) as "verif" from users where global.users.userId = "' . $_SESSION['ID'] . '" ;';
-    $result = executeSql($sql, $pdo);
+    $sql = 'SELECT count(*) as "verif" from users where global.users.userId = :userID ;';
+    $result = executeSql($sql, $pdo, $data);
     if ($result[0]->verif <= 1 && !empty($_SESSION['ID'])) {
 
         $set = "";
@@ -22,9 +23,9 @@ function editProfil($pdo)
 
         $set = substr($set, 0, -2);
 
-        $sql = 'UPDATE users set ' . $set . ' WHERE global.users.userID = ' . $_SESSION['ID'] . ';';
+        $sql = 'UPDATE users set :set WHERE global.users.userID = :ID;';
 
-        executeSql($sql, $pdo);
+        executeSql($sql, $pdo, ["set" => $set, "ID" => $_SESSION['ID']]);
 
         //creation/modif de l'image avatar
         if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
@@ -50,8 +51,8 @@ function editProfil($pdo)
 
 function deleteProfil($pdo)
 {
-    $sql = 'UPDATE global.users set userLife = 0 where userID = "' . $_SESSION['ID'] . '";';
-    $result = executeSql($sql, $pdo);
+    $sql = 'UPDATE global.users set userLife = 0 where userID = :ID;';
+    $result = executeSql($sql, $pdo, ["ID" => $_SESSION["ID"]]);
     session_destroy();
     header("Location: /profil");
 }
@@ -62,29 +63,29 @@ function inscritpion($pdo)
     // stock de toute les donne
     $data = array(
         "userCreationTime" => date("Y-m-d H:i:s"),
-        "userName" => $_POST['name'],
-        "userSurname" => $_POST['surname'],
+        "userName" => htmlentities($_POST['name']),
+        "userSurname" => htmlentities($_POST['surname']),
         "userBirthday" => $_POST['date'],
         "userEmail" => $_POST['email'],
         "userPhone" => $_POST['phone'],
         "userColor" => $_POST['color'],
-        "userPseudo" => $_POST['pseudo'],
-        "userPassword" => $_POST['password'],
-        "userDescription" => $_POST['description'],
+        "userPseudo" => htmlentities($_POST['pseudo']),
+        "userPassword" => htmlentities($_POST['password']),
+        "userDescription" => htmlentities($_POST['description']),
         "userRole" => "chomeur",
         "userFla" => 100,
         "userArka" => 0
     );
 
-    $sql = 'SELECT EXISTS( SELECT * FROM global.users WHERE global.users.userPseudo = "' . $data['userPseudo'] . '" ) as verif;';
-    $result = executeSql($sql, $pdo);
+    $sql = 'SELECT EXISTS( SELECT * FROM global.users WHERE global.users.userPseudo = :userPseudo as verif;';
+    $result = executeSql($sql, $pdo, $data);
 
     // verification si il existe deja et il n'est pas deja connecter
     if ($result[0]->verif == 0 && empty($_SESSION['userID'])) {
         insertInto($data, 'users', $pdo);
 
-        $sql = 'SELECT userID from global.users where global.users.userPseudo = "' . $data['userPseudo'] . '" AND global.users.userPassword = "' . $data['userPassword'] . '" ;';
-        $result = executeSql($sql, $pdo);
+        $sql = 'SELECT userID from global.users where global.users.userPseudo = :userPseudo AND global.users.userPassword = :userPassword ;';
+        $result = executeSql($sql, $pdo, $data);
 
         //creation de l'image avatar
         if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
@@ -112,12 +113,12 @@ function inscritpion($pdo)
 
 function connection($pdo)
 {
-    $sql = 'SELECT userID from global.users where global.users.userPseudo = "' . $_POST['pseudo'] . '" AND global.users.userPassword = "' . $_POST['password'] . '" ;';
-    $result = executeSql($sql, $pdo);
+    $sql = 'SELECT userID from global.users where global.users.userPseudo = :pseudo AND global.users.userPassword = :password ;';
+    $result = executeSql($sql, $pdo, $_POST);
 
     if (isset($result[0]->userID)) {
-        $sql = 'SELECT userLife from global.users where userID=' . $result[0]->userID . ';';
-        $verif = executeSql($sql, $pdo);
+        $sql = 'SELECT userLife from global.users where userID=:ID;';
+        $verif = executeSql($sql, $pdo, ["ID" => $result[0]->userID]);
         if (isset($verif[0]->userLife)) {
             if ($verif[0]->userLife == 1) {
                 modifSession($result[0]->userID, $pdo);

@@ -15,12 +15,12 @@ function connectionPDO($servername, $username, $password, $dbname)
     return $pdo;
 };
 
-function executeSql($sql, $pdo)
+function executeSql($sql, $pdo, $info)
 {
     debug_to_console($sql, 'sql request');
     try {
         $sth = $pdo->prepare($sql);
-        $sth->execute();
+        $sth->execute($info);
         $resultat = $sth->fetchAll();
         debug_to_console($resultat, 'sql result');
         debug_to_console('request end', 'sql');
@@ -32,8 +32,8 @@ function executeSql($sql, $pdo)
 
 function modifSession($id, $pdo)
 {
-    $sql = 'SELECT * from global.users where global.users.userID = ' . $id . ' ;';
-    $result = executeSql($sql, $pdo);
+    $sql = 'SELECT * from global.users where global.users.userID = :id;';
+    $result = executeSql($sql, $pdo, ["id" => $id]);
     $_SESSION['ID'] = $result[0]->userID;
     $_SESSION['email'] = $result[0]->userEmail;
     $_SESSION['phone'] = $result[0]->userPhone;
@@ -47,8 +47,8 @@ function modifSession($id, $pdo)
 
 function verifPasword($function, $pdo)
 {
-    $sql = 'SELECT userPassword from global.users where global.users.userId = "' . $_SESSION['ID'] . '" ;';
-    $result = executeSql($sql, $pdo);
+    $sql = 'SELECT userPassword from global.users where global.users.userId = :userID ;';
+    $result = executeSql($sql, $pdo, ["userID" => $_SESSION['ID']]);
     if (!empty($result[0]->userPassword)) {
         if ($result[0]->userPassword == $_POST["password"]) {
             if (function_exists($function)) {
@@ -91,8 +91,8 @@ function insertInto($data, $base, $pdo)
     $cate = substr($cate, 0, -2);
     $val = substr($val, 0, -3);
 
-    $sql = 'INSERT INTO ' .  $base . ' (' . $cate . ') VALUES (' . $val . ');';
-    executeSql($sql, $pdo);
+    $sql = 'INSERT INTO :base (:cate) VALUES (:val);';
+    executeSql($sql, $pdo, ["base" => $base, "cate" => $cate, "val" => $val]);
 }
 
 function recupInfo($where, $base, $pdo)
@@ -100,7 +100,7 @@ function recupInfo($where, $base, $pdo)
     if ($where != '') {
         $where = 'where ' . $where;
     }
-    $sql = 'SELECT * from global.' . $base . ' ' . $where . ';';
-    $result = executeSql($sql, $pdo);
+    $sql = 'SELECT * from global.:base :where;';
+    $result = executeSql($sql, $pdo, ["base" => $base, "where" => $where]);
     return $result;
 }
