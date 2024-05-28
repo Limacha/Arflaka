@@ -114,7 +114,7 @@ function inscritpion($pdo)
 function connection($pdo)
 {
     $sql = 'SELECT userID from global.users where global.users.userPseudo = :pseudo AND global.users.userPassword = :password ;';
-    $result = executeSql($sql, $pdo, $_POST);
+    $result = executeSql($sql, $pdo, ["pseudo" => $_POST['pseudo'], "password" => $_POST['password']]);
 
     if (isset($result[0]->userID)) {
         $sql = 'SELECT userLife from global.users where userID=:ID;';

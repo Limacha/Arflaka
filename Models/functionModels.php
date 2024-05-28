@@ -100,7 +100,7 @@ function recupInfo($where, $base, $pdo)
     if ($where != '') {
         $where = 'where ' . $where;
     }
-    $sql = 'SELECT * from global.:base :where;';
-    $result = executeSql($sql, $pdo, ["base" => $base, "where" => $where]);
+    $sql = 'SELECT * from global.' . $base . ' ' . $where . ';';
+    $result = executeSql($sql, $pdo, []);
     return $result;
 }

@@ -8,7 +8,7 @@ if (str_starts_with($uri, "/administration")) {
             $title = $title . "arflaka";
             $users = listeUser($pdo);
             $objectifs = listeObjectif($pdo);
-            $roles = recupInfo('', 'roles', $pdo);
+            $roles = recupInfo("", 'roles', $pdo);
 
             $css .= 'arflaka.css';
             $template .= "Administration/arflaka.php";
