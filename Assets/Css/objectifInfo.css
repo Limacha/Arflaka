@@ -2,3 +2,99 @@
     width: auto;
     margin-right: 25px;
 }
+
+/* #region edit button */
+.editBtn {
+    width: 27px;
+    height: 27px;
+
+    margin-left: 15px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: rgb(93, 93, 116);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.367);
+
+    cursor: pointer;
+}
+
+.editBtn:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.688);
+    animation: none;
+}
+
+.editBtn svg {
+    height: 12px;
+    fill: white;
+    z-index: 3;
+    transition-duration: 0.8s;
+}
+
+
+.editBtn:hover svg {
+    transition-duration: 0.8s;
+    transform: rotate(330deg);
+}
+
+/*#endregion*/
+
+/* #region delete cross*/
+.backCrossDel {
+    border-radius: 16px;
+    border: 1px solid #1a1a1a;
+    background: rgba(74, 74, 74, 0.39);
+    width: 30px;
+    height: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 16px;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu__icon span {
+    width: 70%;
+    height: 0.125rem;
+}
+
+.menu__icon span:nth-child(1) {
+    background-color: rgb(25, 25, 25);
+    transform: translateY(7.5px) rotate(-45deg);
+}
+
+.menu__icon span:nth-child(2) {
+    background-color: rgb(25, 25, 25);
+    transform: translateY(-7.5px) rotate(45deg);
+}
+
+.backCrossDel:hover {
+    background: rgb(255, 0, 0);
+}
+
+.menu__icon:hover::before,
+.menu__icon:hover::after {
+    background: rgb(255, 0, 0);
+    opacity: 1;
+}
+
+/*#endregion*/

@@ -2,12 +2,12 @@
     <div id="<?= 'objectif' . $objectif->objId ?>" class="objectifs flex column centerV spaceAround" style="border-color: <?= ($objectif->objHelpOpen) ? "green" : "red" ?>;">
         <div id="divID" class="flex spaceBetween">
             <img src="<?= '/Assets/Images/objectif/' .  $objectif->objId  . '.png' ?>" alt=" <?= 'objectif' . $objectif->objId ?>">
-            <div class="backCrossDel">
-                <button class="menu__icon">
+            <!-- <div class="backCrossDel" style="display: <= (false) ? "flex" : "none" ?>;">
+                <button class="menu__icon" name="objId" onclick="deleteObj(<= $objectif->objId ?>);">
                     <span></span>
                     <span></span>
                 </button>
-            </div>
+            </div> -->
         </div>
         <div>
             <p>Name: <span class="tText"><?= $objectif->objName ?></span></p>

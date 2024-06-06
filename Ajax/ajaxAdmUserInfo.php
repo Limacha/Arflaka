@@ -5,8 +5,8 @@ require_once('../constants.php');
 
 $base = "users";
 
-$sql = 'UPDATE users set :key=:reset WHERE global.:base.userID = :sub;';
-executeSql($sql, $pdo, ["key" => key($_POST), "reset" => reset($_POST), "base" => $base, "sub" => substr($_POST['id'], 6)]);
+$sql = 'UPDATE users set ' . key($_POST) . '=:reset WHERE global.' . $base . '.userID = :sub;';
+executeSql($sql, $pdo, ["reset" => reset($_POST), "sub" => substr($_POST['id'], 6)]);
 $result = recupInfo("userID=" . substr($_POST['id'], 6), $base, $pdo);
 
 if ("userRole" == key($_POST)) {

@@ -12,7 +12,7 @@ if (str_starts_with($uri, "/administration")) {
 
             $css .= 'arflaka.css';
             $template .= "Administration/arflaka.php";
-            //    $script = $jsDirectory . "accueil.js";
+            $script = $jsDirectory . "arflaka.js";
             require_once("./Views/base.php");
         } else if (str_starts_with($uri, "/users/info")) {
             $title = $title . "admUserInfo" . $_GET["more"];
@@ -31,6 +31,8 @@ if (str_starts_with($uri, "/administration")) {
                 if (!empty($data['ID'])) {
                     if (file_exists('./Assets/Images/Avatars/' . $data['ID'] . '.png')) {
                         $userImg = '/Assets/Images/Avatars/' . $data['ID'] . '.png';
+                    } else {
+                        $userImg = '/Assets/Images/profil.png';
                     }
                 }
             }
@@ -79,7 +81,36 @@ if (str_starts_with($uri, "/administration")) {
             $template .= "Administration/admRoleInfo.php";
             $script = $jsDirectory . "admRoleInfo.js";
             require_once("./Views/base.php");
-        }
+        } // else if (str_starts_with($uri, "/objectif/info")) {
+        //     $title = $title . "obj:" . $_GET["more"];
+
+        //     $result = recupInfo('objId = "' . $_GET["more"] . '"', 'objectif', $pdo);
+        //     if (isset($result)) {
+        //         $data = array(
+        //             'ID' => $result[0]->objId,
+        //             'name' => $result[0]->objName,
+        //             'description' => $result[0]->objDescription,
+        //             'statut' => $result[0]->objStatut,
+        //             'startDate' => $result[0]->objStartDate,
+        //             'endDate' => $result[0]->objEndDate,
+        //             'helpOpen' => $result[0]->objHelpOpen,
+        //             'helpLimit' => $result[0]->objHelpLimit,
+        //             'anonyme' => $result[0]->objAnonyme,
+        //             'creator' => $result[0]->objCreator
+        //         );
+        //         if (!empty($data['ID'])) {
+        //             if (file_exists('./Assets/Images/objectif/' . $data['ID'] . '.png')) {
+        //                 $objImg = '/Assets/Images/objectif/' . $data['ID'] . '.png';
+        //             } else {
+        //                 $objImg = '/Assets/Images/profil.png';
+        //             }
+        //         }
+        //     }
+
+        //     $css .= "objectifInfo.css";
+        //     $template .= "objectif/objectifInfo.php";
+        //     require_once("./Views/base.php");
+        // }
     } else {
         header("Location: /403");
     }

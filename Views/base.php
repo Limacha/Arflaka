@@ -20,10 +20,20 @@
 </head>
 
 <body>
-    <?php include  $header  ?>
+    <dialog id="popup">
+        <p></p>
+        <button id="close">close</button>
+        <button></button>
+    </dialog>
 
+    <head>
+        <?php include  $header  ?>
+    </head>
     <main>
         <?php include $template ?>
+
+        <p id="globalError"></p>
+
     </main>
 
     <?php include $footer ?>

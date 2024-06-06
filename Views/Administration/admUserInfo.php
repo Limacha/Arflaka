@@ -5,7 +5,7 @@
                 <img id="avatar" src="<?= $userImg ?>" alt="avatar<?= $data['ID'] ?>">
             </div>
             <div>
-                <table id="info">
+                <table id="userInfo">
                     <tr>
                         <th>
                             <p class="tHead">role:</p>

@@ -77,15 +77,15 @@ function inscritpion($pdo)
         "userArka" => 0
     );
 
-    $sql = 'SELECT EXISTS( SELECT * FROM global.users WHERE global.users.userPseudo = :userPseudo as verif;';
-    $result = executeSql($sql, $pdo, $data);
+    $sql = 'SELECT EXISTS( SELECT * FROM global.users WHERE global.users.userPseudo = :userPseudo) as verif;';
+    $result = executeSql($sql, $pdo, ["userPseudo" => $data["userPseudo"]]);
 
     // verification si il existe deja et il n'est pas deja connecter
     if ($result[0]->verif == 0 && empty($_SESSION['userID'])) {
         insertInto($data, 'users', $pdo);
 
         $sql = 'SELECT userID from global.users where global.users.userPseudo = :userPseudo AND global.users.userPassword = :userPassword ;';
-        $result = executeSql($sql, $pdo, $data);
+        $result = executeSql($sql, $pdo, ["userPseudo" => $data["userPseudo"], "userPassword" => $data["userPassword"]]);
 
         //creation de l'image avatar
         if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {

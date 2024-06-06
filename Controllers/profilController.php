@@ -4,7 +4,9 @@ $css = $cssDirectory;
 if (str_starts_with($uri, "/profil")) {
     $uri = substr($uri, 7);
     if (isset($_POST['logoutButton']) && !empty($_SESSION['ID'])) {
-        $_SESSION['ID'] = null;
+        foreach ($sessionElement as $key => $element) {
+            $_SESSION[$key] = $element;
+        }
         header("Refresh:0");
         exit();
     }

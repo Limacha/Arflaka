@@ -36,7 +36,7 @@ main {
 
 #listPlayers {
     width: 100%;
-    height: 212.2px;
+    height: 211.2px;
     overflow-y: auto;
 }
 
@@ -63,7 +63,7 @@ main {
 
 #listObj {
     width: 100%;
-    height: 212.2px;
+    height: 211.2px;
     overflow-y: auto;
 }
 
@@ -132,7 +132,7 @@ main {
 
 #listRole {
     width: 100%;
-    height: 200px;
+    height: 199px;
     overflow-y: auto;
 }
 

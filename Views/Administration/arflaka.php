@@ -7,7 +7,7 @@
         require_once("./Views/Components/list/listUser.php"); ?>
     </div>
     <br>
-    <button>Edit</button>
+    <!-- <button>Edit</button> -->
 </div>
 <br>
 <div id="objectif" class="flex column centerV">
@@ -17,7 +17,7 @@
         <?php require_once("./Views/Components/list/listObjectif.php"); ?>
     </div>
     <br>
-    <button>Edit</button>
+    <!-- <button>Edit</button> -->
 </div>
 <br>
 <div id="role" class="flex column centerV">
@@ -27,5 +27,5 @@
         <?php require_once("./Views/Components/list/listRole.php"); ?>
     </div>
     <br>
-    <button>Edit</button>
+    <!-- <button>Edit</button> -->
 </div>

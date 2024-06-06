@@ -66,33 +66,35 @@ function verifPasword($function, $pdo)
 
 function insertInto($data, $base, $pdo)
 {
+    $sql = 'insert into ' . $base;
     $cate = "";
-    $val = '"';
+    $val = '';
     $i = 0;
-    /*
-    $data = array(
-        "$key" => $value
-    );
-    */
+    $arSql = array();
     // creation de la commande sql
     foreach ($data as $key => $value) {
         $i++;
         if (!empty($value)) {
 
             $cate = $cate . $key . ", ";
-            $val = $val . $value . '", "';
+            $val = $val . ":v" . $i . ", ";
+            $arSql["v" . $i . ""] = $value;
         }
     }
 
     unset($key);
     unset($value);
+    unset($i);
 
 
     $cate = substr($cate, 0, -2);
-    $val = substr($val, 0, -3);
+    $val = substr($val, 0, -2);
 
-    $sql = 'INSERT INTO :base (:cate) VALUES (:val);';
-    executeSql($sql, $pdo, ["base" => $base, "cate" => $cate, "val" => $val]);
+    $sql .= "(" . $cate . ") values (" . $val . ");";
+
+    // $sql = 'INSERT INTO :base (:cate) VALUES (:val);';
+    // executeSql($sql, $pdo, ["base" => $base, "cate" => $cate, "val" => $val]);
+    executeSql($sql, $pdo, $arSql);
 }
 
 function recupInfo($where, $base, $pdo)

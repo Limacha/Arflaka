@@ -31,20 +31,36 @@ $cssDirectory = "/Assets/Css/";
 
 $jsDirectory = "/Assets/Scripts/";
 
-if (!isset($_SESSION['ID'])) {
-    $_SESSION['ID'] = null;
-    $_SESSION['email'] = null;
-    $_SESSION['phone'] = null;
-    $_SESSION['pseudo'] = null;
-    $_SESSION['description'] = null;
-    $_SESSION['color'] = "rgb(0, 0, 0)";
-    $_SESSION['role'] = "visiteur";
-    $_SESSION['fla'] = 0;
-    $_SESSION['arka'] = 0;
+$sessionElement = array(
+    'ID' => null,
+    'email' => null,
+    'phone' => null,
+    'pseudo' => null,
+    'description' => null,
+    'color' => "rgb(0,0,0)",
+    'role' => "visiteur",
+    'fla' => 0,
+    'arka' => 0,
+    'permission' => []
+);
+
+foreach ($sessionElement as $key => $element) {
+    if (!isset($_SESSION[$key])) {
+        $_SESSION[$key] = $element;
+    }
 }
 
 if (!empty($_SESSION['ID'])) {
     if (file_exists('./Assets/Images/Avatars/' . $_SESSION['ID'] . '.png')) {
         $profilImg = '/Assets/Images/Avatars/' . $_SESSION['ID'] . '.png';
+    }
+    //SELECT * FROM global.rolesperm where `roleId` = (select `roleId` from global.roles WHERE `roleName` = "roi");
+    $result = recupInfo("roleId = (select roleId from global.roles WHERE roleName = '" . $_SESSION['role'] . "')", "rolesperm", $pdo);
+    if (empty($_SESSION['permission'])) {
+        foreach ($result as $key) {
+            if ($key->havePerm === 1) {
+                array_push($_SESSION['permission'], $key->permId);
+            }
+        }
     }
 }

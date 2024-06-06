@@ -19,7 +19,7 @@ table td p {
 }
 
 #div {
-    max-width: min(calc(475px - 14%), calc(100vw - 14%));
+    max-width: min(calc(500px - 14%), calc(100vw - 14%));
     margin: 0 7%;
 }
 
@@ -52,7 +52,7 @@ button {
     height: 50px;
 }
 
-#info {
+#userInfo {
     margin: 0px;
 }
 

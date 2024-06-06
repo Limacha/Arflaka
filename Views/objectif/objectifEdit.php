@@ -1,50 +1,44 @@
 <div id="body" class="flex column centerV">
-    <h1>New objectif</h1>
+    <h1>modif <?= $data['name'] ?></h1>
     <form action="" method="POST" class="flex column centerV" enctype="multipart/form-data">
         <div>
             <div id="divFieldset" class="flex spaceBetween">
                 <table>
                     <tbody>
                         <tr>
-                            <th>nom de l'objectif:</th>
-                            <td>
-                                <input type="text" id="name" name="name" maxlength="30" placeholder="nom: 30" required>
-                            </td>
-
-                        </tr>
-                        <tr>
                             <th>une description:</th>
                             <td>
-                                <textarea name="description" id="description" maxlength="255" placeholder="votre description en 255 characters max" required></textarea>
+                                <textarea name="description" id="description" maxlength="255" placeholder="votre description en 255 characters max" required><?= $data['description'] ?></textarea>
                             </td>
 
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th>date de début prévu:</th>
                             <td>
-                                <input type="datetime-local" id="startTime" name="startTime" value="<?= date_format($startTime, "Y-m-d H:i") ?>" min="<?= date_format($startTime, "Y-m-d H:i") ?>" />
+                                <input type="datetime-local" id="startTime" name="startTime" value="<= date_format($startTime, "Y-m-d H:i") ?>" min="<= date_format($startTime, "Y-m-d H:i") ?>" />
                             </td>
                         </tr>
                         <tr>
                             <th>date de fin:</th>
                             <td>
-                                <input type="datetime-local" id="endTime" name="endTime" value="<?= date_format($endTime, "Y-m-d H:i") ?>" min="<?= date_format($endTime, "Y-m-d H:i") ?>" />
+                                <input type="datetime-local" id="endTime" name="endTime" value="<= date_format($endTime, "Y-m-d H:i") ?>" min="<= date_format($endTime, "Y-m-d H:i") ?>" />
                             </td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+                        <!-- <tr>
                             <th>choissisez un statut:</th>
                             <td>
                                 <select name="statut" id="statut">
                                     <option selected value="statutBrouillon">brouillon</option>
                                     <option value="statutPrepa">en Preparation</option>
+                                    <option selected value="statutAbandonner">abandonner</option>
                                 </select>
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <th>ouvert au proposition d'aide:</th>
                             <td>
                                 <label class="container">
-                                    <input type="checkbox" id="helpOpen" name="helpOpen" checked>
+                                    <input <?= ($data["helpOpen"] == 1) ? "checked" : "" ?> type="checkbox" id="helpOpen" name="helpOpen">
                                     <div class="checkmark"></div>
                                 </label>
                             </td>
@@ -54,7 +48,7 @@
                                 <p>limiter le nombre de participant:</p>
                             </th>
                             <td>
-                                <input type="number" id="helpLimit" name="helpLimit" min="0" max="2147483647" placeholder="Limite: rien = ∞">
+                                <input type="number" id="helpLimit" name="helpLimit" min="0" max="2147483647" placeholder="Limite: rien = ∞" value="<?= $data['helpLimit'] ?>">
                             </td>
                         </tr>
                         <tr>
@@ -69,7 +63,7 @@
                             <th>rester anonyme:</th>
                             <td>
                                 <label class="container">
-                                    <input type="checkbox" id="anonyme" name="anonyme">
+                                    <input <?= ($data["anonyme"] == 1) ? "checked" : "" ?> type="checkbox" id="anonyme" name="anonyme">
                                     <div class="checkmark"></div>
                                 </label>
                             </td>
@@ -79,7 +73,7 @@
             </div>
             <div id="buttonCentrer">
                 <div id="envoie" class="flex centerH">
-                    <button id="objCreateEnd" name="objCreateEnd" class="flex centerV">
+                    <button id="objModifEnd" name="objModifEnd" class="flex centerV" value="<?= $_GET['more'] ?>">
                         <div class="svg-wrapper-1">
                             <div class="svg-wrapper">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">

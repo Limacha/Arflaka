@@ -1,11 +1,4 @@
-delete objectif + statut abandonner
 edit info perm
-acces avec perm
-faille script in desc
 participation
 verif password
-
-
-
-
-Une autre mesure de prévention contre une attaque XSS est le filtrage des données reçues côté client. Cela signifie que l’ensemble des données doit passer par un filtre qui élimine les caractères dangereux comme la balise <script>, les gestionnaires d’événements HTML comme onActivate(), onClick(), les éléments JavaScript, etc.
+hash password

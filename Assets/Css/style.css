@@ -4,6 +4,35 @@
     font-family: Hotdog;
 }
 
+/* #region popup */
+#popup {
+    position: fixed;
+    height: 100px;
+    width: 250px;
+    background-color: black;
+    /*
+    top: 0;
+    left: 0;*/
+    z-index: 1000;
+    /*
+    padding-top: calc(50vh - 50px);
+    padding-left: calc(50vw - 125px);
+    padding-bottom: calc(50vh - 50px);
+    padding-right: calc(50vw - 125px); */
+    margin: auto;
+}
+
+#popup::backdrop {
+    background-color: transparent;
+    height: 100%;
+}
+
+#popup button {
+    display: flex;
+}
+
+/* #endregion */
+
 body {
     background-color: var(--siteBackgroundColor);
 }
@@ -349,7 +378,7 @@ button:hover {
     height: auto;
 }
 
-.switch .checkmark {
+.switch .checkmarkSwitch {
     width: var(--icon-checkmark-size);
     color: var(--icon-checkmark-color);
     -webkit-transform: scale(0);
@@ -357,7 +386,7 @@ button:hover {
     transform: scale(0);
 }
 
-.switch .cross {
+.switch .crossSwitch {
     width: var(--icon-cross-size);
     color: var(--icon-cross-color);
 }
@@ -425,13 +454,13 @@ button:hover {
     background: var(--switch-checked-bg);
 }
 
-.switch input:checked+.slider .checkmark {
+.switch input:checked+.slider .checkmarkSwitch {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
 }
 
-.switch input:checked+.slider .cross {
+.switch input:checked+.slider .crossSwitch {
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     transform: scale(0);
